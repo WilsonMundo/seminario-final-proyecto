@@ -4,6 +4,7 @@
 **Autor:** Wilson Neftali Mundo Alonzo (`wmundoa@miumg.edu.gt`)  
 **Institución:** Universidad Mariano Gálvez de Guatemala — Facultad de Ingeniería en Sistemas de la Información y Ciencias de la Computación  
 **Entorno en Producción:** `https://agente.mundoalonzo.com`  
+**Repositorio Oficial de este Documento Final:** `https://github.com/WilsonMundo/seminario-final-proyecto`  
 **Repositorio Oficial de Anexos de Telemetría (Evidencia Empírica):** `https://github.com/WilsonMundo/anexo-proyecto`  
 **Fecha:** Noviembre de 2026
 
