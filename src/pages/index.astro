@@ -1,0 +1,3099 @@
+---
+import "../styles/app.css";
+---
+
+<!doctype html>
+<html lang="es" data-theme="corporate" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/Logo.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>
+      Asistente Inteligente con Arquitectura Agéntica — Wilson Neftali Mundo Alonzo (UMG)
+    </title>
+  </head>
+  <body class="bg-base-200 text-base-content antialiased selection:bg-primary/20">
+    <!-- Barra Superior Flotante (Oculta al imprimir) -->
+    <header
+      class="no-print sticky top-0 z-50 border-b border-base-300 bg-base-100/95 backdrop-blur supports-[backdrop-filter]:bg-base-100/80 shadow-xs"
+    >
+      <div class="navbar max-w-6xl mx-auto px-4 min-h-14">
+        <div class="navbar-start gap-3">
+          <img src="/Logo.png" alt="Logo UMG" class="w-8 h-8 object-contain" />
+          <div class="leading-tight">
+            <span class="font-bold text-sm tracking-tight block text-slate-900">
+              Informe Final de Graduación
+            </span>
+            <span class="text-xs text-slate-500 block">
+              Universidad Mariano Gálvez de Guatemala
+            </span>
+          </div>
+        </div>
+
+        <nav class="navbar-center hidden md:flex">
+          <ul class="menu menu-horizontal px-1 text-xs font-medium gap-1">
+            <li><a href="#portada" class="rounded-md">Portada</a></li>
+            <li><a href="#problema-solucion" class="rounded-md">0. Problema y Solución</a></li>
+            <li><a href="#aspectos-eticos" class="rounded-md">1. Ética</a></li>
+            <li><a href="#aspecto-legal" class="rounded-md">2. Legal</a></li>
+            <li><a href="#seguridad-informatica" class="rounded-md">3. Seguridad</a></li>
+            <li><a href="#caso-uso-real" class="rounded-md">4. Caso de Uso</a></li>
+            <li><a href="#despliegue-kubernetes" class="rounded-md">5. Kubernetes</a></li>
+            <li><a href="#conclusiones-recomendaciones" class="rounded-md">6. Conclusiones</a></li>
+          </ul>
+        </nav>
+
+        <div class="navbar-end gap-2">
+          <button
+            type="button"
+            onclick="window.print()"
+            class="btn btn-primary btn-sm gap-2 font-semibold shadow-xs"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"
+              />
+            </svg>
+            Exportar a PDF
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenedor Principal tipo Hoja Carta -->
+    <main class="max-w-[21.59cm] mx-auto my-6 px-4 sm:px-0 print:my-0 print:px-0">
+      <!-- ================================================================= -->
+      <!-- PORTADA ACADÉMICA OFICIAL (UNIVERSIDAD MARIANO GÁLVEZ)            -->
+      <!-- ================================================================= -->
+      <section
+        id="portada"
+        class="page-break relative bg-white text-[#0f172a] shadow-md border border-slate-200/80 rounded-xs px-10 py-14 sm:px-16 sm:py-16 min-h-[27.94cm] flex flex-col justify-between items-center text-center select-text print:shadow-none print:border-0 print:p-0 print:min-h-[24.9cm]"
+      >
+        <!-- Encabezado Institucional -->
+        <div class="z-10 w-full space-y-5 pt-2 font-serif tracking-wide">
+          <h1 class="text-lg sm:text-[19px] font-bold uppercase text-black leading-snug">
+            UNIVERSIDAD MARIANO GÁLVEZ DE GUATEMALA
+          </h1>
+          <h2 class="text-base sm:text-[17px] font-bold uppercase text-black leading-snug">
+            FACULTAD DE INGENIERÍA
+          </h2>
+          <h3 class="text-sm sm:text-[15.5px] font-bold uppercase text-black leading-snug max-w-2xl mx-auto">
+            INGENIERÍA EN SISTEMAS DE LA INFORMACIÓN Y CIENCIAS DE LA COMPUTACIÓN
+          </h3>
+        </div>
+
+        <!-- Bloque Central con Marca de Agua UMG y Título de Tesis -->
+        <div class="relative flex items-center justify-center w-full my-auto py-16">
+          <!-- Escudo UMG en marca de agua central -->
+          <img
+            src="/Logo.png"
+            alt="Escudo Universidad Mariano Gálvez de Guatemala"
+            class="pointer-events-none select-none w-[320px] sm:w-[370px] h-[320px] sm:h-[370px] object-contain opacity-22"
+          />
+
+          <!-- Título del Proyecto Superpuesto al Centro -->
+          <div class="absolute inset-0 flex items-center justify-center px-2 sm:px-6">
+            <h2
+              class="font-serif text-base sm:text-[17.5px] font-bold uppercase text-black leading-[2.1] tracking-wide max-w-[640px]"
+            >
+              ASISTENTE INTELIGENTE CON ARQUITECTURA AGÉNTICA PARA LA
+              CONSULTA Y GESTIÓN ASISTIDA DE INFORMACIÓN EMPRESARIAL MEDIANTE
+              LENGUAJE NATURAL EN UN SOFTWARE DE ADMINISTRACIÓN EMPRESARIAL
+            </h2>
+          </div>
+        </div>
+
+        <!-- Pie de Portada: Autor y Fecha -->
+        <div class="z-10 w-full space-y-5 pb-4 font-serif text-black">
+          <p class="text-base sm:text-[17px] font-normal tracking-normal">
+            Wilson Neftali Mundo Alonzo
+          </p>
+          <p class="text-base sm:text-[17px] font-normal tracking-normal">
+            Guatemala, noviembre de 2026
+          </p>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- ESPACIO RESERVADO PARA LOS SIGUIENTES BLOQUES DEL DOCUMENTO       -->
+      <!-- ================================================================= -->
+      <div id="contenido-documento" class="space-y-8 mt-8 print:mt-0">
+        <!-- =============================================================== -->
+        <!-- SECCIÓN PRELIMINAR (RÚBRICA 35% + CANDADO 60%):                  -->
+        <!-- EL PROBLEMA, LA SOLUCIÓN IMPLEMENTADA Y BACKEND CON BD EN NUBE  -->
+        <!-- =============================================================== -->
+        <section
+          id="problema-solucion"
+          class="page-break bg-white text-[#0f172a] shadow-md border border-slate-200/80 rounded-xs px-8 py-10 sm:px-12 sm:py-12 space-y-6 print:shadow-none print:border-0 print:p-0"
+        >
+          <!-- Encabezado de Sección -->
+          <div class="border-b-2 border-slate-800 pb-3 flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <span class="badge badge-primary badge-sm font-semibold uppercase tracking-wider mb-1">
+
+              </span>
+              <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+                El Problema Empresarial, la Solución Implementada y Arquitectura Backend Cloud
+              </h2>
+            </div>
+            <span class="text-xs font-mono text-slate-500">
+              Ref: Cap. I (Secc. 1.4–1.8) · Cap. III–IV · Cap. IX (Tablas 24–26)
+            </span>
+          </div>
+
+          <!-- Introducción del Propósito Central -->
+          <p class="text-sm leading-relaxed text-slate-700 text-justify">
+            Más allá del desarrollo de componentes de software o de la orquestación de contenedores, el
+            propósito central de este proyecto de graduación consiste en resolver de forma verificable un
+            cuello de botella operativo y económico real dentro de una <strong>empresa comercial en Guatemala</strong>
+            cuya operación diaria descansa sobre cuatro módulos transaccionales críticos de un sistema de
+            planificación de recursos empresariales (ERP): <strong>Inventarios, Compras, Ventas y Cuentas por Cobrar</strong>.
+            A continuación se documenta la raíz del problema identificada en el Capítulo I del informe final,
+            la coherencia práctica de la arquitectura de tres capas construida y la certificación técnica del
+            almacenamiento de usuarios y artefactos en bases de datos con servicios en la nube.
+          </p>
+
+          <!-- KPIs de Contraste Problema vs. Solución -->
+          <div class="stats grid grid-cols-2 sm:grid-cols-4 w-full bg-slate-50 border border-slate-300 rounded-md shadow-none overflow-visible">
+            <div class="stat py-3 px-3.5 border-b sm:border-b-0 sm:border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Espera Tradicional vs. Asistida
+              </div>
+              <div class="stat-value text-lg sm:text-xl font-extrabold text-primary my-0.5">
+                72 h → 11.04 s
+              </div>
+              <div class="stat-desc text-[10.5px] text-slate-600 whitespace-normal leading-snug">
+                De 1–3 días hábiles manuales a mediana P50 en vivo
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5 border-b sm:border-b-0 sm:border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Costo de 5 Reportes Complejos
+              </div>
+              <div class="stat-value text-lg sm:text-xl font-extrabold text-emerald-700 my-0.5">
+                -95.79 %
+              </div>
+              <div class="stat-desc text-[10.5px] text-slate-600 whitespace-normal leading-snug">
+                De USD 625.00 (manual) a USD 26.31 (asistido)
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5 border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Persistencia de Usuarios Cloud
+              </div>
+              <div class="stat-value text-lg sm:text-xl font-extrabold text-slate-900 my-0.5">
+                SQL + PG Cloud
+              </div>
+              <div class="stat-desc text-[10.5px] text-slate-600 whitespace-normal leading-snug">
+                100 % usuarios, 2FA y RBAC en BD Cloud VPS
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Re-Query de Reportes Guardados
+              </div>
+              <div class="stat-value text-lg sm:text-xl font-extrabold text-slate-900 my-0.5">
+                USD 0.00 IA
+              </div>
+              <div class="stat-desc text-[10.5px] text-slate-600 whitespace-normal leading-snug">
+                Re-ejecución directa en ApiHub sin llamar al LLM
+              </div>
+            </div>
+          </div>
+
+          <!-- 0.1 Comprensión a Fondo de la Raíz del Problema -->
+          <div class="space-y-4">
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 border-l-4 border-primary pl-3">
+              Comprensión a Fondo de la Raíz del Problema (Sección 1.4 y 3.1.2)
+            </h3>
+            <p class="text-sm leading-relaxed text-slate-700 text-justify">
+              El diagnóstico realizado sobre la empresa comercial evidenció que el problema de fondo <strong>no era la ausencia de datos</strong>,
+              sino la <strong>fricción estructural entre el lenguaje de negocio y el modelo relacional normalizado del ERP</strong>.
+              Mientras los usuarios de gerencia, ventas, compras y créditos formulan necesidades en términos comerciales
+              (<em>«¿cuáles fueron los productos más comprados en el último trimestre frente a sus unidades vendidas?»</em> o
+              <em>«¿cuál es el balance de antigüedad de saldos por cliente a octubre?»</em>), el ERP almacena los hechos
+              distribuidos en decenas de tablas maestras, encabezados, detalles de documentos y movimientos de kardex.
+              Cuando una necesidad analítica supera las pantallas predefinidas o cruza varios módulos, la organización
+              quedaba atrapada en un <strong>procedimiento tradicional manual de tres etapas</strong>:
+            </p>
+
+            <!-- Las 3 etapas del problema tradicional vs por qué no usar un LLM sin gobierno -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+              <div class="card bg-white border border-slate-300 shadow-2xs rounded-md">
+                <div class="card-body p-4 space-y-1.5">
+                  <div class="flex items-center justify-between">
+                    <span class="badge badge-outline badge-xs font-mono border-slate-400 text-slate-700">
+                      Etapa Manual 1
+                    </span>
+                    <span class="text-[11px] font-mono font-bold text-amber-800">Cuello Operativo</span>
+                  </div>
+                  <h4 class="font-bold text-xs sm:text-sm text-slate-900">
+                    1. Identificación y Solicitud Informal
+                  </h4>
+                  <p class="text-xs text-slate-600 leading-relaxed text-justify">
+                    El usuario de negocio detecta que el reporte requerido no existe en las opciones fijas del ERP
+                    o exige navegar por múltiples pantallas y exportar archivos parciales para consolidarlos
+                    manualmente en hojas de cálculo (Excel), con alto riesgo de error humano y discrepancia de cifras.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card bg-white border border-slate-300 shadow-2xs rounded-md">
+                <div class="card-body p-4 space-y-1.5">
+                  <div class="flex items-center justify-between">
+                    <span class="badge badge-outline badge-xs font-mono border-slate-400 text-slate-700">
+                      Etapa Manual 2
+                    </span>
+                    <span class="text-[11px] font-mono font-bold text-red-700">Dependencia TI</span>
+                  </div>
+                  <h4 class="font-bold text-xs sm:text-sm text-slate-900">
+                    2. Resolución Técnica Manual en SQL
+                  </h4>
+                  <p class="text-xs text-slate-600 leading-relaxed text-justify">
+                    El requerimiento se escala a soporte técnico o al administrador de base de datos, quien debe
+                    interpretar la necesidad, localizar tablas y llaves foráneas en SQL Server, programar la consulta
+                    <code class="font-mono text-[11px]">T-SQL</code> o desarrollar una vista/reporte nuevo dentro del
+                    ERP a un costo promedio de <strong>USD 125.00 por reporte</strong>.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card bg-white border border-slate-300 shadow-2xs rounded-md">
+                <div class="card-body p-4 space-y-1.5">
+                  <div class="flex items-center justify-between">
+                    <span class="badge badge-outline badge-xs font-mono border-slate-400 text-slate-700">
+                      Etapa Manual 3
+                    </span>
+                    <span class="text-[11px] font-mono font-bold text-red-700">24 a 72 Horas</span>
+                  </div>
+                  <h4 class="font-bold text-xs sm:text-sm text-slate-900">
+                    3. Validación Tardía y Pérdida de Oportunidad
+                  </h4>
+                  <p class="text-xs text-slate-600 leading-relaxed text-justify">
+                    La entrega demora entre <strong>1 y 3 días hábiles</strong> según la carga del equipo técnico.
+                    Si al recibir los datos la gerencia necesita cambiar un filtro, agregar el costo promedio o
+                    comparar otro período, el ciclo vuelve a iniciar, degradando la oportunidad en la toma de decisiones.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Formulación Académica del Problema, Objetivo e Hipótesis (Secciones 1.5 a 1.7) -->
+            <div class="bg-slate-50 border border-slate-300 rounded-md p-4 space-y-2.5">
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-800">
+                Alineación Metodológica del Planteamiento (Secciones 1.5, 1.6 y 1.7 del Informe de Tesis)
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs text-slate-700">
+                <div class="bg-white border border-slate-200 rounded p-3 space-y-1">
+                  <span class="font-bold text-slate-900 block">Pregunta Principal (Secc. 1.5.1):</span>
+                  <p class="leading-relaxed text-justify">
+                    ¿En qué medida la implementación de un asistente inteligente con arquitectura agéntica permite
+                    consultar y gestionar información empresarial mediante lenguaje natural de forma precisa, segura y
+                    oportuna en los módulos de <strong>Inventarios, Compras, Ventas y Cuentas por Cobrar</strong>,
+                    reduciendo además el costo asociado al desarrollo de nuevos reportes frente al procedimiento
+                    tradicional del ERP?
+                  </p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded p-3 space-y-1">
+                  <span class="font-bold text-slate-900 block">Objetivo General (Secc. 1.6.1):</span>
+                  <p class="leading-relaxed text-justify">
+                    Desarrollar y evaluar un asistente inteligente con arquitectura agéntica para la consulta y gestión
+                    asistida de información empresarial mediante lenguaje natural en un ERP, determinando su efecto en
+                    la eficiencia en la obtención de información, la precisión de respuesta y el costo de generación de
+                    nuevos reportes de alta complejidad frente al procedimiento tradicional.
+                  </p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded p-3 space-y-1">
+                  <span class="font-bold text-slate-900 block">Hipótesis de Investigación H₁ (Secc. 1.7):</span>
+                  <p class="leading-relaxed text-justify">
+                    La implementación del asistente inteligente mejora significativamente la eficiencia en la obtención
+                    de información empresarial y reduce en <strong>al menos un 20 %</strong> el costo asociado a la
+                    generación de cinco reportes de alta complejidad (resultado real demostrado: <strong>-95.79 %</strong>,
+                    pasando de USD 625.00 a USD 26.31).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 0.2 Utilidad Práctica de la Aplicación: Solución Directa y Coherente -->
+          <div class="space-y-4">
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 border-l-4 border-primary pl-3">
+              Utilidad de la Aplicación: Solución Práctica sin Complejidad Innecesaria (Secciones 3.7 y 4.1–4.6)
+            </h3>
+            <p class="text-sm leading-relaxed text-slate-700 text-justify">
+              Para resolver la problemática sin incurrir en el riesgo de conectar un LLM de forma directa e irrestricta
+              a la base de datos corporativa —lo cual habría expuesto credenciales, provocado alucinaciones de tablas
+              inexistentes y consumido ~35 KB de esquema por cada pregunta—, se diseñó una <strong>arquitectura empresarial
+              desacoplada de tres capas</strong> que se integra al ERP existente sin reemplazar sus pantallas transaccionales.
+              Cada componente cumple una responsabilidad estrictamente acotada que prioriza el valor práctico:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="card bg-slate-50 border border-slate-300 shadow-none rounded-md">
+                <div class="card-body p-4 space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="badge badge-primary badge-xs font-semibold uppercase">
+                      Orquestación Cognitiva Bifurcada
+                    </span>
+                    <span class="text-xs font-mono text-slate-500">Luna + Terra + Milvus</span>
+                  </div>
+                  <h4 class="font-bold text-sm text-slate-900">
+                    1. Traducción Semántica con Contexto Mínimo (~3.5 KB)
+                  </h4>
+                  <p class="text-xs text-slate-700 leading-relaxed text-justify">
+                    El microservicio <code class="font-mono text-[11px] bg-white px-1 py-0.5 rounded border border-slate-200">rag-api (Python / FastAPI / LangGraph)</code>
+                    divide el trabajo en dos perfiles: <strong>Agente Luna</strong> (<code class="font-mono text-[11px]">gpt-5.6-luna</code>)
+                    clasifica la intención en 8 categorías cerradas, solicita aclaración si faltan parámetros y redacta la
+                    síntesis final; mientras que <strong>Agente Terra</strong> (<code class="font-mono text-[11px]">gpt-5.6-terra</code>)
+                    recupera evidencia semántica en <strong>Milvus</strong> (índice <code class="font-mono text-[11px]">AUTOINDEX / COSINE</code>,
+                    1,536 dimensiones) y utiliza el <code class="font-mono text-[11px]">SchemaClosureEngine</code> para
+                    recortar el esquema de ~35 KB a ~3.5 KB antes de proponer un contrato <code class="font-mono text-[11px]">QueryPlanCandidateV1</code>.
+                  </p>
+                </div>
+              </div>
+
+              <div class="card bg-slate-50 border border-slate-300 shadow-none rounded-md">
+                <div class="card-body p-4 space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="badge badge-neutral badge-xs font-semibold uppercase">
+                      Valor Práctico y Reutilización
+                    </span>
+                    <span class="text-xs font-mono text-slate-500">QueryArtifactRecord · Re-Query</span>
+                  </div>
+                  <h4 class="font-bold text-sm text-slate-900">
+                    2. Hidratación Directa y Re-Query a Costo Cero de IA
+                  </h4>
+                  <p class="text-xs text-slate-700 leading-relaxed text-justify">
+                    Cuando <code class="font-mono text-[11px] bg-white px-1 py-0.5 rounded border border-slate-200">ApiHub (.NET)</code>
+                    valida y ejecuta el <code class="font-mono text-[11px]">SELECT</code> en SQL Server, hidrata hasta
+                    <strong>700 filas</strong> directamente hacia la interfaz <code class="font-mono text-[11px]">Angular 22 + DevExtreme</code>
+                    (con exportación inmediata a Excel/PDF y gráficos <code class="font-mono text-[11px]">DxChart</code>)
+                    y envía al LLM únicamente evidencia acotada si el resultado no supera las <strong>200 filas</strong>.
+                    Además, los reportes validados se guardan en <code class="font-mono text-[11px]">assistant.query_artifacts</code>,
+                    permitiendo que los usuarios los re-ejecuten cambiando fechas o límites <strong>sin volver a invocar a OpenAI</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 0.3 Candado del 60 % de la Rúbrica: Usuarios y Backend en Base de Datos en la Nube -->
+          <div class="space-y-3">
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 border-l-4 border-emerald-700 pl-3">
+              Certificación de Backend y Usuarios Almacenados en Base de Datos en la Nube (Requisito Excluyente 60 %)
+            </h3>
+            <p class="text-sm leading-relaxed text-slate-700 text-justify">
+              En cumplimiento estricto del requisito obligatorio de la convocatoria (<em>«Todos los usuarios de su
+              aplicación deben estar almacenados en una base de datos con servicios en la nube, es decir que debe
+              tener backend»</em>), el sistema <strong>no utiliza usuarios estáticos en memoria ni almacenamiento local en el navegador</strong>.
+              La totalidad del ciclo de identidad, doble factor de autenticación (<strong>2FA / MFA</strong>), roles
+              corporativos, bitácoras de auditoría y artefactos de consulta opera sobre motores de bases de datos
+              relacionales desplegados en el servidor cloud VPS de producción (<code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">https://agente.mundoalonzo.com</code>)
+              y gobernados por el backend empresarial <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">ApiHub (C# / .NET 8)</code>
+              en <strong>Kubernetes (K3s)</strong>:
+            </p>
+
+            <div class="overflow-x-auto border border-slate-300 rounded-md">
+              <table class="table table-xs sm:table-sm w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-slate-100 text-slate-800 border-b border-slate-300 text-[11px] uppercase tracking-wider">
+                    <th class="py-2.5 px-3 font-bold">Capa / Entidad Persistida en la Nube</th>
+                    <th class="py-2.5 px-3 font-bold">Motor de Base de Datos Cloud y Red</th>
+                    <th class="py-2.5 px-3 font-bold">Servicio Backend Propietario</th>
+                    <th class="py-2.5 px-3 font-bold">Evidencia Funcional y Reglas Aplicadas</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 text-xs text-slate-700">
+                  <tr>
+                    <td class="py-2 px-3 font-semibold text-slate-900">
+                      Usuarios Corporativos, Credenciales, 2FA/MFA y Sesiones
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px] text-slate-800">
+                      SQL Server Cloud (<code class="font-mono">172.18.0.2:1433</code>) / PostgreSQL (<code class="font-mono">172.18.0.3:5432</code>)
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px]">
+                      ApiHub (.NET 8 en K3s Pod <code class="font-mono">apihub</code>)
+                    </td>
+                    <td class="py-2 px-3">
+                      Login con usuario/contraseña en BD + reto <strong>2FA (TOTP/OTP)</strong> antes de emitir JWT (<code class="font-mono text-[11px]">RF-01</code>, <code class="font-mono text-[11px]">RN-01</code>).
+                    </td>
+                  </tr>
+                  <tr class="bg-slate-50/70">
+                    <td class="py-2 px-3 font-semibold text-slate-900">
+                      Perfiles, Roles, Alcance por Sucursal y Catálogo Autorizativo
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px] text-slate-800">
+                      SQL Server Cloud (<code class="font-mono">172.18.0.2:1433</code>)
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px]">
+                      ApiHub (<code class="font-mono">AuthorizationCatalogV1</code>)
+                    </td>
+                    <td class="py-2 px-3">
+                      Perfiles reales evaluados en producción: <strong>Gerencia, Ventas, Compras y Desarrollo</strong>, con permisos efectivos por módulo y sucursal (<code class="font-mono text-[11px]">RN-03</code>, <code class="font-mono text-[11px]">RF-06</code>).
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-semibold text-slate-900">
+                      Artefactos de Consultas Guardadas y Re-Query (<code class="font-mono text-[11px]">assistant.query_artifacts</code>)
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px] text-slate-800">
+                      SQL Server Cloud (<code class="font-mono">assistant.query_artifacts</code>)
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px]">
+                      ApiHub (<code class="font-mono">QueryArtifactRecord</code>)
+                    </td>
+                    <td class="py-2 px-3">
+                      Persistencia de consultas validadas con <code class="font-mono text-[11px]">template_sql</code>, <code class="font-mono text-[11px]">parameters_json</code> y <code class="font-mono text-[11px]">roles_allowed_json</code> para re-ejecución determinista.
+                    </td>
+                  </tr>
+                  <tr class="bg-slate-50/70">
+                    <td class="py-2 px-3 font-semibold text-slate-900">
+                      Datos Transaccionales del ERP (4 Módulos Operativos)
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px] text-slate-800">
+                      SQL Server Cloud (<code class="font-mono">172.18.0.2:1433</code>)
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px]">
+                      ApiHub (Dapper + <code class="font-mono">ScriptDom</code> Read-Only)
+                    </td>
+                    <td class="py-2 px-3">
+                      Consultas reales en vivo sobre <strong>Inventarios, Compras, Ventas y Cuentas por Cobrar</strong> bajo <code class="font-mono text-[11px]">CommandTimeout = 30 s</code> y <code class="font-mono text-[11px]">TOP (501)</code>.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-semibold text-slate-900">
+                      Catálogo Semántico Vectorial (Esquema + Reglas de Negocio)
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px] text-slate-800">
+                      Milvus Vector DB Cloud (<code class="font-mono">rag_erp_schema_v1</code>)
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px]">
+                      rag-api (Python 3.12 / FastAPI / LangGraph)
+                    </td>
+                    <td class="py-2 px-3">
+                      Recuperación <code class="font-mono text-[11px]">Top-K</code> de tablas, vistas y relaciones autorizadas mediante embeddings de 1,536 dimensiones.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 0.4 Los 5 Reportes Analíticos de Alta Complejidad Evaluados (Tabla 24 de la Tesis) -->
+          <div class="space-y-3">
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 border-l-4 border-primary pl-3">
+              Evidencia de Utilidad Directa: Los 5 Reportes Analíticos de Alta Complejidad (Tabla 24 de la Tesis)
+            </h3>
+            <p class="text-xs sm:text-sm leading-relaxed text-slate-700 text-justify">
+              Para demostrar empíricamente que la aplicación resuelve necesidades complejas que antes exigían entre
+              1 y 3 días de programación manual en SQL Server (a razón de <strong>USD 125.00 por reporte</strong>), el
+              estudio evaluó cinco requerimientos analíticos reales formulados en lenguaje natural por los usuarios
+              de la empresa comercial:
+            </p>
+
+            <div class="overflow-x-auto border border-slate-300 rounded-md">
+              <table class="table table-xs w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-slate-100 text-slate-800 border-b border-slate-300 text-[10.5px] uppercase tracking-wider">
+                    <th class="py-2 px-2.5 font-bold">Caso</th>
+                    <th class="py-2 px-2.5 font-bold">Módulo(s) ERP</th>
+                    <th class="py-2 px-2.5 font-bold">Consulta Real Formulada en Lenguaje Natural</th>
+                    <th class="py-2 px-2.5 font-bold">Complejidad Relacional Resuelta</th>
+                    <th class="py-2 px-2.5 font-bold text-right">Tradicional vs. Asistido</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 text-[11px] text-slate-700">
+                  <tr>
+                    <td class="py-2 px-2.5 font-mono font-bold text-slate-900 whitespace-nowrap">Caso 1</td>
+                    <td class="py-2 px-2.5 font-semibold">Compras / Inventarios</td>
+                    <td class="py-2 px-2.5 italic text-slate-800">
+                      «reporte detallado de compras al proveedor FEILO SYLVANIA PANAMA, S.A.? filtrar por rango de fechas, y que el reporte muestre el detalle completo de las compras realizadas a ese proveedor, no solamente el total: Producto, Fecha de cada compra, Número de factura/documento, Cantidad comprada, Costo unitario, Total por producto y total general del proveedor, último costo de compra y costo promedio (mes de agosto)»
+                    </td>
+                    <td class="py-2 px-2.5">
+                      Cruce de maestro de proveedores, encabezados/detalles de compra y cálculo simultáneo de último costo y costo promedio por ítem.
+                    </td>
+                    <td class="py-2 px-2.5 font-mono text-right whitespace-nowrap">
+                      USD 125.00 → <strong class="text-emerald-700">USD 5.26</strong>
+                    </td>
+                  </tr>
+                  <tr class="bg-slate-50/70">
+                    <td class="py-2 px-2.5 font-mono font-bold text-slate-900 whitespace-nowrap">Caso 7</td>
+                    <td class="py-2 px-2.5 font-semibold">Compras + Ventas (Intermodular)</td>
+                    <td class="py-2 px-2.5 italic text-slate-800">
+                      «¿Cuáles fueron los productos más comprados a proveedores durante el último trimestre y cómo se compara esa cantidad con las unidades vendidas en el mismo período?»
+                    </td>
+                    <td class="py-2 px-2.5">
+                      Agregación trimestral simultánea entre movimientos de entrada por compras y salida por facturación de ventas por producto.
+                    </td>
+                    <td class="py-2 px-2.5 font-mono text-right whitespace-nowrap">
+                      USD 125.00 → <strong class="text-emerald-700">USD 5.26</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-2.5 font-mono font-bold text-slate-900 whitespace-nowrap">Caso 33</td>
+                    <td class="py-2 px-2.5 font-semibold">Cuentas por Cobrar</td>
+                    <td class="py-2 px-2.5 italic text-slate-800">
+                      «balance de antiguedad de saldos por cliente a octubre 2026»
+                    </td>
+                    <td class="py-2 px-2.5">
+                      Clasificación de cartera pendiente por tramos de mora (vigente, 1–30, 31–60, 61–90 y &gt;90 días) con consolidación por deudor.
+                    </td>
+                    <td class="py-2 px-2.5 font-mono text-right whitespace-nowrap">
+                      USD 125.00 → <strong class="text-emerald-700">USD 5.26</strong>
+                    </td>
+                  </tr>
+                  <tr class="bg-slate-50/70">
+                    <td class="py-2 px-2.5 font-mono font-bold text-slate-900 whitespace-nowrap">Caso 43</td>
+                    <td class="py-2 px-2.5 font-semibold">Ventas / Comisiones</td>
+                    <td class="py-2 px-2.5 italic text-slate-800">
+                      «¿Qué vendedores registraron mayores ventas durante agosto y cuáles fueron los productos que más contribuyeron a sus ventas?»
+                    </td>
+                    <td class="py-2 px-2.5">
+                      Doble agregación jerárquica: ranking de desempeño por vendedor y desglose de contribución porcentual por artículo facturado.
+                    </td>
+                    <td class="py-2 px-2.5 font-mono text-right whitespace-nowrap">
+                      USD 125.00 → <strong class="text-emerald-700">USD 5.26</strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-2.5 font-mono font-bold text-slate-900 whitespace-nowrap">Caso 48</td>
+                    <td class="py-2 px-2.5 font-semibold">Ventas (Serie Temporal 12M)</td>
+                    <td class="py-2 px-2.5 italic text-slate-800">
+                      «Analiza el crecimiento mensual de las ventas durante los últimos 12 meses y muestra cuánto creció o cayó cada mes respecto al anterior.»
+                    </td>
+                    <td class="py-2 px-2.5">
+                      Serie histórica de 12 períodos mensuales con cálculo de variación absoluta y porcentual intermensual (<code class="font-mono">MoM</code>).
+                    </td>
+                    <td class="py-2 px-2.5 font-mono text-right whitespace-nowrap">
+                      USD 125.00 → <strong class="text-emerald-700">USD 5.26</strong>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- SECCIÓN 1: ASPECTOS ÉTICOS IMPLEMENTADOS E INVOLUCRADOS         -->
+        <!-- =============================================================== -->
+        <section
+          id="aspectos-eticos"
+          class="page-break bg-white text-[#0f172a] shadow-md border border-slate-200/80 rounded-xs px-8 py-10 sm:px-12 sm:py-12 space-y-6 print:shadow-none print:border-0 print:p-0"
+        >
+          <!-- Encabezado de Sección -->
+          <div class="border-b-2 border-slate-800 pb-3 flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <span class="badge badge-primary badge-sm font-semibold uppercase tracking-wider mb-1">
+                Sección 1 · Gobernanza y Responsabilidad en IA
+              </span>
+              <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+                1. Aspectos Éticos Implementados e Involucrados
+              </h2>
+            </div>
+            <span class="text-xs font-mono text-slate-500">
+              Ref: UNESCO (2021) · RN-04 · RN-11 · RN-12
+            </span>
+          </div>
+
+          <!-- Introducción fundamentada en la Tesis -->
+          <p class="text-sm leading-relaxed text-slate-700 text-justify">
+            En concordancia con la <em>Recomendación sobre la Ética de la Inteligencia Artificial</em>
+            (UNESCO, 2021) y los hallazgos de Mejía Vera et al. (2025) documentados en el Marco Teórico
+            de la investigación, la integración de modelos de lenguaje grande (<code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">gpt-5.6-luna</code>
+            y <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">gpt-5.6-terra</code>) dentro de un
+            sistema de planificación de recursos empresariales (ERP) no puede operar como una fuente
+            autónoma e irrestricta de verdad. En entornos donde las decisiones gerenciales dependen de
+            saldos de cuentas por cobrar, existencias de inventario y facturación real, la ética del
+            sistema se implementó como <strong>restricciones técnicas verificables en código y arquitectura</strong>,
+            articuladas en torno a dos pilares fundamentales respaldados por la telemetría de producción
+            (<code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">Datos-estadisticos-VPS-2026-11-09.jsonl</code>).
+          </p>
+
+          <!-- Indicadores Clave de Evidencia Ética en Producción (Diseño 100% fluido sin scroll) -->
+          <div class="stats grid grid-cols-2 sm:grid-cols-4 w-full bg-slate-50 border border-slate-300 rounded-md shadow-none overflow-visible">
+            <div class="stat py-3 px-3.5 border-b sm:border-b-0 sm:border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Supervisión Humana (Clarificación)
+              </div>
+              <div class="stat-value text-lg sm:text-xl text-primary font-extrabold my-0.5">
+                31.0 %
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                18 de 58 turnos activos (27 de 86 en traza)
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5 border-b sm:border-b-0 sm:border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Pseudonimización Criptográfica
+              </div>
+              <div class="stat-value text-lg sm:text-xl text-slate-900 font-extrabold my-0.5">
+                SHA-256
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                2,505 registros (0 PII / 0 datos de clientes)
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5 border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Minimización de Esquema ERP
+              </div>
+              <div class="stat-value text-lg sm:text-xl text-emerald-700 font-extrabold my-0.5">
+                ~90 %
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                De ~35 KB a ~3.5 KB (SchemaClosureEngine)
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Alucinación Numérica en UI
+              </div>
+              <div class="stat-value text-lg sm:text-xl text-slate-900 font-extrabold my-0.5">
+                0.0 %
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                Hidratación directa vía QueryResultV2
+              </div>
+            </div>
+          </div>
+
+          <!-- Pilar 1 y Pilar 2 en Tarjetas Estructuradas -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Pilar 1: Privacidad y Minimización de Datos -->
+            <div class="card bg-white border border-slate-300 rounded-md shadow-none">
+              <div class="card-body p-5 space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <span class="badge badge-outline badge-sm font-mono text-[11px]">
+                    RNF-04 · RN-09 · RN-12
+                  </span>
+                  <span class="text-xs font-semibold text-slate-600">Privacidad por Diseño</span>
+                </div>
+                <h3 class="card-title text-base font-bold text-slate-900">
+                  1.1 Privacidad y Minimización de Datos
+                </h3>
+                <p class="text-xs leading-relaxed text-slate-700 text-justify">
+                  Se aplicó el principio de minimización tanto en el flujo de inferencia hacia el
+                  proveedor externo (OpenAI) como en las bitácoras de auditoría del servidor VPS:
+                </p>
+                <ul class="list-disc pl-4 space-y-1.5 text-xs text-slate-700">
+                  <li>
+                    <strong>Pseudonimización criptográfica (<code class="font-mono">SHA-256</code>):</strong>
+                    En los <strong>2,505 registros</strong> extraídos de las <strong>114,002 líneas de log</strong>
+                    en producción (<code class="font-mono">1,514 rag_log</code> y <code class="font-mono">989 rag_trace</code>),
+                    los identificadores de sesión (<code class="font-mono">conversation_id</code>,
+                    <code class="font-mono">turn_id</code> y <code class="font-mono">request_id</code>) se
+                    transforman en huellas hexadecimales de 24 caracteres, excluyendo nombres de clientes,
+                    NIT, correos, montos monetarios, consultas SQL y texto libre de las preguntas.
+                  </li>
+                  <li>
+                    <strong>Hidratación desacoplada de resultados:</strong>
+                    Cuando <code class="font-mono">ApiHub (.NET)</code> ejecuta una consulta autorizada en
+                    SQL Server, las filas recuperadas se entregan directamente a <code class="font-mono">Angular 22 / DevExtreme</code>
+                    mediante el contrato <code class="font-mono">QueryResultV2</code>. Los registros financieros
+                    y de clientes <strong>jamás se reenvían a la ventana de contexto del LLM</strong> para ser
+                    renderizados.
+                  </li>
+                  <li>
+                    <strong>Cierre relacional mínimo (<code class="font-mono">SchemaClosureEngine</code>):</strong>
+                    En lugar de exponer el esquema completo del ERP (~35 KB) en cada prompt, el algoritmo
+                    calcula el subgrafo conexo mínimo (~3.5 KB), reduciendo en ~90 % la superficie de
+                    metadatos compartida.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Pilar 2: Transparencia y Supervisión Humana -->
+            <div class="card bg-white border border-slate-300 rounded-md shadow-none">
+              <div class="card-body p-5 space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <span class="badge badge-outline badge-sm font-mono text-[11px]">
+                    RF-09 · RF-10 · RN-04 · RN-11
+                  </span>
+                  <span class="text-xs font-semibold text-slate-600">Human-in-the-Loop</span>
+                </div>
+                <h3 class="card-title text-base font-bold text-slate-900">
+                  1.2 Transparencia y Supervisión Humana
+                </h3>
+                <p class="text-xs leading-relaxed text-slate-700 text-justify">
+                  La arquitectura agéntica prioriza la veracidad contable y el control humano por encima
+                  de la complacencia generativa, impidiendo que el modelo adivine parámetros o altere el ERP:
+                </p>
+                <ul class="list-disc pl-4 space-y-1.5 text-xs text-slate-700">
+                  <li>
+                    <strong>Detención ante ambigüedad (31 % de los turnos):</strong>
+                    Conforme a la regla de negocio <code class="font-mono">RN-04</code>, cuando el usuario
+                    formula una petición sin período temporal definido o con un clasificador de artículo
+                    ambiguo (<code class="font-mono">ENTITY_AMBIGUOUS</code>), el agente ligero
+                    <strong>Luna (<code class="font-mono">gpt-5.6-luna</code>)</strong> pausa el grafo en el
+                    nodo <code class="font-mono">await_human_input</code> y emite el estado
+                    <code class="font-mono">needs_clarification</code>. En producción, el
+                    <strong>31.0 % de los turnos del contenedor activo (18 de 58)</strong> y el
+                    <strong>31.4 % de los eventos de traza (27 de 86)</strong> correspondieron a este ciclo
+                    de aclaración controlada, evitando inventar filtros o alucinar cifras financieras.
+                  </li>
+                  <li>
+                    <strong>Frontera estricta de autoridad (Proponer vs. Ejecutar):</strong>
+                    El modelo <code class="font-mono">gpt-5.6-terra</code> únicamente emite un sobre candidato
+                    (<code class="font-mono">QueryPlanCandidateV1</code>); carece de credenciales o drivers
+                    SQL y nunca presenta como ejecutada una acción operativa sensible (<code class="font-mono">RN-11</code>),
+                    la cual se canaliza como evento pendiente de validación humana.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabla Resumen a Ancho Completo (Sin barras de desplazamiento) -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">
+              Tabla 1.1 — Resumen de Mecanismos Éticos Auditados en el Servidor VPS
+            </h4>
+            <div class="border border-slate-300 rounded-md overflow-hidden">
+              <table class="table table-xs w-full">
+                <thead class="bg-slate-100 text-slate-800 border-b border-slate-300">
+                  <tr>
+                    <th class="py-2 px-3">Mecanismo Ético Implementado</th>
+                    <th class="py-2 px-3">Componente Arquitectónico</th>
+                    <th class="py-2 px-3">Regla / Requisito</th>
+                    <th class="py-2 px-3 text-right">Métrica Auditada en Producción</th>
+                  </tr>
+                </thead>
+                <tbody class="text-xs text-slate-700 divide-y divide-slate-200">
+                  <tr>
+                    <td class="py-2 px-3 font-medium">
+                      Pausa automática ante consulta ambigua (<code class="font-mono text-[11px] bg-slate-100 px-1 rounded">needs_clarification</code>)
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px]">Luna (gpt-5.6-luna) / LangGraph</td>
+                    <td class="py-2 px-3 font-mono text-[11px]">RN-04 · RF-10</td>
+                    <td class="py-2 px-3 text-right font-mono font-semibold">18 / 58 turnos (31.0 %)</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-medium">
+                      Reanudación supervisada por el usuario (<code class="font-mono text-[11px] bg-slate-100 px-1 rounded">clarification_response</code>)
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px]">resume_clarification</td>
+                    <td class="py-2 px-3 font-mono text-[11px]">RF-10 · RNF-06</td>
+                    <td class="py-2 px-3 text-right font-mono font-semibold">27 / 86 trazas (31.4 %)</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-medium">
+                      Pseudonimización criptográfica de sesión (<code class="font-mono text-[11px] bg-slate-100 px-1 rounded">SHA-256</code> 24-hex)
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px]">rag_log + rag_trace</td>
+                    <td class="py-2 px-3 font-mono text-[11px]">RNF-04 · RN-12</td>
+                    <td class="py-2 px-3 text-right font-mono font-semibold">2,505 registros (100 %)</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-medium">
+                      Exposición de PII o saldos financieros al LLM durante el renderizado
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px]">ApiHub (.NET) → Angular 22</td>
+                    <td class="py-2 px-3 font-mono text-[11px]">RN-09 · QueryResultV2</td>
+                    <td class="py-2 px-3 text-right font-mono font-semibold text-emerald-700">0 registros (0.0 %)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Evidencia de Pseudonimización a Ancho Completo (Formal para Impresión) -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">
+              Evidencia de Pseudonimización en el Log VPS (<code class="font-mono text-[11px] bg-slate-100 px-1.5 py-0.5 rounded normal-case">Datos-estadisticos-VPS-2026-11-09.jsonl</code>)
+            </h4>
+            <div class="mockup-code bg-[#f8fafc] text-[#0f172a] border border-slate-300 shadow-none text-xs w-full">
+              <pre data-prefix="1"><code>{`{"source": "rag_trace", "event": "turn.request", "timestamp_utc": "2026-10-31T02:34:19.112041+00:00",`}</code></pre>
+              <pre data-prefix="2"><code>{` "conversation_id": "816622057fe8999d70ea7f87", "turn_id": "13eb290160df48a1b90e21c4",`}</code></pre>
+              <pre data-prefix="3"><code>{` "request_id": "c7ce9bfc8ec2918204fa110b", "input_type": "user_message", "elapsed_ms": 0.31}`}</code></pre>
+              <pre data-prefix="4"><code>{`// Registro íntegro auditado: sin texto libre del usuario, sin sentencia SQL y sin PII de clientes.`}</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- SECCIÓN 2: ASPECTO LEGAL DEL PROYECTO (LICENCIAMIENTO Y AUTORÍA)-->
+        <!-- =============================================================== -->
+        <section
+          id="aspecto-legal"
+          class="page-break bg-white text-[#0f172a] shadow-md border border-slate-200/80 rounded-xs px-8 py-10 sm:px-12 sm:py-12 space-y-6 print:shadow-none print:border-0 print:p-0"
+        >
+          <!-- Encabezado de Sección -->
+          <div class="border-b-2 border-slate-800 pb-3 flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <span class="badge badge-primary badge-sm font-semibold uppercase tracking-wider mb-1">
+                Sección 2 · Marco Jurídico y Propiedad Intelectual
+              </span>
+              <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+                2. Aspecto Legal del Proyecto (Licenciamiento y Derechos de Autor)
+              </h2>
+            </div>
+            <span class="text-xs font-mono text-slate-500">
+              Ref: Decreto 33-98 · Decreto 57-2000 · OpenAI Enterprise Terms
+            </span>
+          </div>
+
+          <!-- Introducción Jurídica y Régimen de Titularidad -->
+          <p class="text-sm leading-relaxed text-slate-700 text-justify">
+            El presente proyecto de graduación y la totalidad de los módulos que conforman el ecosistema
+            empresarial integrado (<code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">AppWeb</code>,
+            <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">ApiHub</code> y el microservicio
+            agéntico <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">rag-api</code>) constituyen
+            <strong>propiedad intelectual privada y software de código cerrado</strong> (<em>All Rights Reserved</em>).
+            Ningún componente de negocio, motor de reglas, esquema relacional del ERP ni contrato de
+            orquestación desarrollado en esta investigación ha sido liberado bajo licencia <em>open-source</em>.
+            La arquitectura legal se fundamenta en la protección patrimonial del código propio y en la
+            selección estricta de dependencias de terceros con licencias permisivas que no imponen
+            obligaciones de reciprocidad (<em>copyleft</em>).
+          </p>
+
+          <!-- Indicadores Clave del Marco Legal (Diseño 100% fluido para Impresión) -->
+          <div class="stats grid grid-cols-2 sm:grid-cols-4 w-full bg-slate-50 border border-slate-300 rounded-md shadow-none overflow-visible">
+            <div class="stat py-3 px-3.5 border-b sm:border-b-0 sm:border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Régimen del Proyecto y ERP
+              </div>
+              <div class="stat-value text-base sm:text-lg text-slate-900 font-extrabold my-0.5">
+                Propietario
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                Código cerrado · Todos los derechos reservados
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5 border-b sm:border-b-0 sm:border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Protección Legal Nacional
+              </div>
+              <div class="stat-value text-base sm:text-lg text-primary font-extrabold my-0.5">
+                Dto. 33-98
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                Ley de Derecho de Autor y Dto. 57-2000 (Guatemala)
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5 border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Entrenamiento con Datos API
+              </div>
+              <div class="stat-value text-base sm:text-lg text-emerald-700 font-extrabold my-0.5">
+                0.0 % (Opt-Out)
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                OpenAI Business Terms (sin reentrenamiento público)
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Riesgo Copyleft (GPL/AGPL)
+              </div>
+              <div class="stat-value text-base sm:text-lg text-slate-900 font-extrabold my-0.5">
+                Nulo (0)
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                100 % librerías de terceros MIT / Apache 2.0
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloques Jurídicos: Propiedad Intelectual Privada vs. Terceros y APIs -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Bloque 2.1: Titularidad Privada del Proyecto y del ERP -->
+            <div class="card bg-white border border-slate-300 rounded-md shadow-none">
+              <div class="card-body p-5 space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <span class="badge badge-outline badge-sm font-mono text-[11px]">
+                    Decreto 33-98 · Decreto 57-2000
+                  </span>
+                  <span class="text-xs font-semibold text-slate-600">Código Cerrado</span>
+                </div>
+                <h3 class="card-title text-base font-bold text-slate-900">
+                  2.1 Titularidad Privada del Proyecto y del ERP
+                </h3>
+                <p class="text-xs leading-relaxed text-slate-700 text-justify">
+                  El código fuente, la arquitectura y los artefactos de conocimiento están resguardados bajo
+                  el marco legal de la República de Guatemala:
+                </p>
+                <ul class="list-disc pl-4 space-y-1.5 text-xs text-slate-700">
+                  <li>
+                    <strong>Derechos de autor y programas de ordenador (Decreto 33-98):</strong>
+                    Conforme a los artículos 15 y 30 de la <em>Ley de Derecho de Autor y Derechos Conexos</em>,
+                    tanto el ERP preexistente (<code class="font-mono">AppWeb</code> y <code class="font-mono">ApiHub</code>)
+                    como la obra derivada e integrada del proyecto de graduación (<code class="font-mono">rag-api</code>,
+                    algoritmo <code class="font-mono">SchemaClosureEngine</code>, validador AST con
+                    <code class="font-mono">ScriptDom</code> y contratos <code class="font-mono">QueryPlanCandidateV1</code> /
+                    <code class="font-mono">QueryResultV2</code>) son propiedad intelectual privada y exclusiva,
+                    prohibiéndose su reproducción, descompilación o distribución pública.
+                  </li>
+                  <li>
+                    <strong>Secreto empresarial e industrial (Decreto 57-2000):</strong>
+                    La topología relacional del ERP, el catálogo de reglas de negocio, los prompts de sistema
+                    y la base vectorial semántica constituyen secretos empresariales protegidos por la
+                    <em>Ley de Propiedad Industrial</em>.
+                  </li>
+                  <li>
+                    <strong>Delimitación del anexo académico público:</strong>
+                    Para efectos de verificación científica de la tesis, únicamente se publica el archivo de
+                    telemetría pseudonimizada (<code class="font-mono">Datos-estadisticos-VPS-2026-11-09.jsonl</code>),
+                    preservando bajo reserva absoluta el código fuente y la base de datos corporativa.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Bloque 2.2: Propiedad Intelectual de Terceros, APIs y Open-Source -->
+            <div class="card bg-white border border-slate-300 rounded-md shadow-none">
+              <div class="card-body p-5 space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <span class="badge badge-outline badge-sm font-mono text-[11px]">
+                    OpenAI API · MIT · Apache 2.0
+                  </span>
+                  <span class="text-xs font-semibold text-slate-600">Cumplimiento de Terceros</span>
+                </div>
+                <h3 class="card-title text-base font-bold text-slate-900">
+                  2.2 Propiedad Intelectual de Terceros y APIs
+                </h3>
+                <p class="text-xs leading-relaxed text-slate-700 text-justify">
+                  El sistema integra servicios en la nube y paquetes de software de terceros respetando
+                  íntegramente sus contratos comerciales y licencias de distribución:
+                </p>
+                <ul class="list-disc pl-4 space-y-1.5 text-xs text-slate-700">
+                  <li>
+                    <strong>Términos Empresariales de OpenAI (API Business Terms):</strong>
+                    El consumo de los modelos <code class="font-mono">gpt-5.6-luna</code>,
+                    <code class="font-mono">gpt-5.6-terra</code> y <code class="font-mono">text-embedding-3-small</code>
+                    se realiza mediante el canal corporativo de la API de OpenAI. Bajo esta modalidad contractual,
+                    <strong>los datos e instrucciones transmitidos vía API no se utilizan para entrenar ni reentrenar modelos públicos</strong>,
+                    y la titularidad legal de los insumos (<em>inputs</em>) y resultados generados (<em>outputs</em>)
+                    permanece en un 100 % en poder de la organización propietaria del ERP.
+                  </li>
+                  <li>
+                    <strong>Licenciamiento comercial de interfaz:</strong>
+                    El renderizado tabular y matricial en <code class="font-mono">AppWeb (Angular 22)</code>
+                    opera bajo licencia comercial activa de <strong>DevExtreme</strong> (<code class="font-mono">dx-data-grid</code>
+                    y <code class="font-mono">dx-pivot-grid</code>).
+                  </li>
+                  <li>
+                    <strong>Compatibilidad con licencias Open-Source permisivas:</strong>
+                    Las librerías externas utilizadas (<strong>LangGraph, Milvus, K3s, FastAPI, .NET 8 y Astro/Tailwind</strong>)
+                    se rigen por licencias <strong>MIT</strong> y <strong>Apache 2.0</strong>, las cuales
+                    autorizan su uso comercial y enlace dentro de software propietario cerrado sin exigir la
+                    apertura del código fuente propio.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabla Auditora de Licenciamiento por Componente (Ancho Completo sin Scroll) -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">
+              Tabla 2.1 — Matriz de Titularidad Jurídica y Licenciamiento del Ecosistema Tecnológico
+            </h4>
+            <div class="border border-slate-300 rounded-md overflow-hidden">
+              <table class="table table-xs w-full">
+                <thead class="bg-slate-100 text-slate-800 border-b border-slate-300">
+                  <tr>
+                    <th class="py-2 px-3">Componente / Tecnología</th>
+                    <th class="py-2 px-3">Categoría</th>
+                    <th class="py-2 px-3">Licencia / Régimen Legal</th>
+                    <th class="py-2 px-3">Impacto sobre el Código del Proyecto</th>
+                  </tr>
+                </thead>
+                <tbody class="text-xs text-slate-700 divide-y divide-slate-200">
+                  <tr class="bg-slate-50/70">
+                    <td class="py-2 px-3 font-bold text-slate-900">
+                      ERP (<code class="font-mono text-[11px]">AppWeb</code>, <code class="font-mono text-[11px]">ApiHub</code>) + Asistente Agéntico (<code class="font-mono text-[11px]">rag-api</code>)
+                    </td>
+                    <td class="py-2 px-3 font-semibold text-primary">Núcleo Propio</td>
+                    <td class="py-2 px-3 font-mono text-[11px] font-semibold">
+                      Propietario Cerrado (Dto. 33-98 / 57-2000)
+                    </td>
+                    <td class="py-2 px-3">
+                      Propiedad intelectual privada exclusiva; prohibida su redistribución o apertura.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-medium">
+                      OpenAI API (<code class="font-mono text-[11px]">gpt-5.6-luna</code>, <code class="font-mono text-[11px]">gpt-5.6-terra</code>, Embeddings)
+                    </td>
+                    <td class="py-2 px-3">Servicio Cloud IA</td>
+                    <td class="py-2 px-3 font-mono text-[11px]">OpenAI Business / Enterprise Terms</td>
+                    <td class="py-2 px-3">
+                      Exclusión de reentrenamiento público; titularidad 100 % privada sobre inputs y outputs.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-medium">
+                      DevExtreme (<code class="font-mono text-[11px]">dx-data-grid</code>, <code class="font-mono text-[11px]">dx-pivot-grid</code>)
+                    </td>
+                    <td class="py-2 px-3">Librería UI Comercial</td>
+                    <td class="py-2 px-3 font-mono text-[11px]">DevExpress Commercial License</td>
+                    <td class="py-2 px-3">
+                      Uso autorizado en el frontend empresarial sin transferencia de propiedad del ERP.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-medium">
+                      LangGraph, FastAPI, Pydantic v2, Uvicorn
+                    </td>
+                    <td class="py-2 px-3">Orquestación Python</td>
+                    <td class="py-2 px-3 font-mono text-[11px]">MIT License (Permisiva)</td>
+                    <td class="py-2 px-3">
+                      Permite integración en software cerrado conservando los avisos de copyright de terceros.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-medium">
+                      Milvus Vector DB, PyMilvus, K3s (Kubernetes)
+                    </td>
+                    <td class="py-2 px-3">Infraestructura / RAG</td>
+                    <td class="py-2 px-3 font-mono text-[11px]">Apache License 2.0 (Permisiva)</td>
+                    <td class="py-2 px-3">
+                      Concede licencia de patente y uso comercial sin contaminar el código propietario.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-medium">
+                      .NET 8, Dapper, Microsoft ScriptDom, Angular 22, Astro, Tailwind CSS, DaisyUI
+                    </td>
+                    <td class="py-2 px-3">Backend / Frontend / Doc</td>
+                    <td class="py-2 px-3 font-mono text-[11px]">MIT License (Permisiva)</td>
+                    <td class="py-2 px-3">
+                      Cumplimiento total sin efecto <em>copyleft</em> sobre el sistema empresarial.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Declaración Formal de Reserva de Derechos (Formato Impresión) -->
+          <div class="mockup-code bg-[#f8fafc] text-[#0f172a] border border-slate-300 shadow-none text-xs w-full">
+            <pre data-prefix="§"><code>{`DECLARACIÓN DE TITULARIDAD Y RESERVA DE DERECHOS (COPYRIGHT NOTICE)`}</code></pre>
+            <pre data-prefix="©"><code>{`Copyright (c) 2026 Wilson Neftali Mundo Alonzo & Titular Corporativo del Sistema ERP. Todos los derechos reservados.`}</code></pre>
+            <pre data-prefix="1"><code>{`Queda estrictamente prohibida la reproducción, distribución, comunicación pública, transformación o ingeniería inversa`}</code></pre>
+            <pre data-prefix="2"><code>{`del código fuente de AppWeb, ApiHub (.NET) y rag-api (Python), al amparo del Decreto 33-98 y Decreto 57-2000 de Guatemala.`}</code></pre>
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- SECCIÓN 3: ANÁLISIS DE LAS PRUEBAS DE SEGURIDAD INFORMÁTICA     -->
+        <!-- =============================================================== -->
+        <section
+          id="seguridad-informatica"
+          class="page-break bg-white text-[#0f172a] shadow-md border border-slate-200/80 rounded-xs px-8 py-10 sm:px-12 sm:py-12 space-y-6 print:shadow-none print:border-0 print:p-0"
+        >
+          <!-- Encabezado de Sección -->
+          <div class="border-b-2 border-slate-800 pb-3 flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <span class="badge badge-primary badge-sm font-semibold uppercase tracking-wider mb-1">
+                Sección 3 · Ciberseguridad, Defensa en Profundidad y Auditoría
+              </span>
+              <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+                3. Análisis de las Pruebas de Seguridad Informática Realizadas
+              </h2>
+            </div>
+            <span class="text-xs font-mono text-slate-500">
+              Ref: 2FA/MFA · ScriptDom AST · RN-01..RN-03 · RNF-03..RNF-04
+            </span>
+          </div>
+
+          <!-- Introducción de Seguridad y Defensa en Profundidad -->
+          <p class="text-sm leading-relaxed text-slate-700 text-justify">
+            Dado que un asistente basado en modelos de lenguaje grande (<code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">LLM</code>)
+            expuesto a consultas en lenguaje natural introduce vectores de riesgo específicos —tales como
+            <em>Prompt Injection</em>, escalamiento de privilegios entre sucursales, exfiltración de costos
+            confidenciales o generación accidental de sentencias destructivas (<code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">DDL/DML</code>)—,
+            la seguridad informática del proyecto se diseñó bajo un modelo de <strong>Defensa en Profundidad y Confianza Cero (Zero-Trust)</strong>.
+            Las pruebas se ejecutaron sobre cuatro barreras de control: <strong>(1) Autenticación de Doble Factor (2FA / MFA)</strong>
+            en el acceso al backend empresarial, <strong>(2) Aislamiento físico del microservicio de IA</strong>
+            sin drivers ni credenciales SQL, <strong>(3) Inspección sintáctica determinista del AST T-SQL mediante <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">Microsoft ScriptDom</code></strong>
+            y <strong>(4) Auditoría real de fallos y rechazos controlados</strong> en los
+            <strong>2,505 eventos de producción</strong> del servidor VPS.
+          </p>
+
+          <!-- Indicadores Clave de Pruebas de Seguridad (Diseño 100% fluido sin scroll) -->
+          <div class="stats grid grid-cols-2 sm:grid-cols-4 w-full bg-slate-50 border border-slate-300 rounded-md shadow-none overflow-visible">
+            <div class="stat py-3 px-3.5 border-b sm:border-b-0 sm:border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Control de Identidad y Acceso
+              </div>
+              <div class="stat-value text-base sm:text-lg text-primary font-extrabold my-0.5">
+                JWT + 2FA
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                Doble factor + RBAC por rol y sucursal en ApiHub
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5 border-b sm:border-b-0 sm:border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Ejecuciones DML / DDL / SQLi
+              </div>
+              <div class="stat-value text-base sm:text-lg text-emerald-700 font-extrabold my-0.5">
+                0 (100 % Bloq.)
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                Validación AST TSql160Parser + Dapper @params
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5 border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Rechazos Controlados (Fail-Closed)
+              </div>
+              <div class="stat-value text-base sm:text-lg text-slate-900 font-extrabold my-0.5">
+                17.2 % (10/58)
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                Turnos bloqueados por guardas sin tocar SQL Server
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Drivers SQL en Microservicio IA
+              </div>
+              <div class="stat-value text-base sm:text-lg text-slate-900 font-extrabold my-0.5">
+                0 Drivers
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                rag-api sin pyodbc/sqlalchemy ni connection strings
+              </div>
+            </div>
+          </div>
+
+          <!-- Capas de Seguridad Evaluadas: 2FA/RBAC y Aislamiento + ScriptDom AST -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Bloque 3.1: Autenticación de Doble Factor (2FA), Sesiones y RBAC -->
+            <div class="card bg-white border border-slate-300 rounded-md shadow-none">
+              <div class="card-body p-5 space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <span class="badge badge-outline badge-sm font-mono text-[11px]">
+                    2FA / MFA · JWT · RN-03 · RNF-04
+                  </span>
+                  <span class="text-xs font-semibold text-slate-600">Identidad y Perímetro</span>
+                </div>
+                <h3 class="card-title text-base font-bold text-slate-900">
+                  3.1 Autenticación de Doble Factor (2FA) y Autorización RBAC
+                </h3>
+                <p class="text-xs leading-relaxed text-slate-700 text-justify">
+                  La autoridad exclusiva sobre la identidad empresarial reside en <code class="font-mono">ApiHub (.NET)</code>,
+                  donde se validaron controles estrictos antes de habilitar cualquier interacción con el agente:
+                </p>
+                <ul class="list-disc pl-4 space-y-1.5 text-xs text-slate-700">
+                  <li>
+                    <strong>Verificación de Doble Factor (2FA / MFA):</strong>
+                    Se incorporó autenticación de segundo factor obligatoria en el flujo de inicio de sesión
+                    corporativo (<code class="font-mono">AppWeb → ApiHub</code>). Las pruebas verificaron que
+                    credenciales primarias válidas pero sin confirmación del código de segundo factor son
+                    rechazadas (<code class="font-mono">HTTP 401/403</code>), impidiendo la emisión del token de
+                    sesión y bloqueando el acceso al canal conversacional ante robo o filtración de contraseñas.
+                  </li>
+                  <li>
+                    <strong>Sobre autorizativo firmado (<code class="font-mono">AuthorizationCatalogV1</code>):</strong>
+                    Una vez superado el 2FA, <code class="font-mono">ApiHub</code> resuelve en el servidor el
+                    alcance efectivo del usuario (rol <code class="font-mono">Gerencia</code>, <code class="font-mono">Ventas</code>,
+                    <code class="font-mono">Compras</code> o <code class="font-mono">Desarrollo</code>, empresa y sucursales
+                    permitidas). El microservicio Python jamás acepta <em>claims</em> libres desde el cliente.
+                  </li>
+                  <li>
+                    <strong>Autenticación técnica entre servicios:</strong>
+                    La comunicación interna <code class="font-mono">ApiHub ↔ rag-api</code> dentro de la red de
+                    contenedores exige cabeceras técnicas verificadas y correlación criptográfica de
+                    <code class="font-mono">request_id</code> y <code class="font-mono">turn_id</code>.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Bloque 3.2: Aislamiento Zero-Trust y Validación AST T-SQL (ScriptDom) -->
+            <div class="card bg-white border border-slate-300 rounded-md shadow-none">
+              <div class="card-body p-5 space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <span class="badge badge-outline badge-sm font-mono text-[11px]">
+                    RN-01 · RN-02 · RF-06 · RNF-03
+                  </span>
+                  <span class="text-xs font-semibold text-slate-600">Seguridad en Base de Datos</span>
+                </div>
+                <h3 class="card-title text-base font-bold text-slate-900">
+                  3.2 Aislamiento del LLM y Validación AST (<code class="font-mono">ScriptDom</code>)
+                </h3>
+                <p class="text-xs leading-relaxed text-slate-700 text-justify">
+                  Para neutralizar ataques de <em>Prompt Injection</em> e inyección SQL derivada de lenguaje
+                  natural, se separó físicamente la generación de la consulta de su validación y ejecución:
+                </p>
+                <ul class="list-disc pl-4 space-y-1.5 text-xs text-slate-700">
+                  <li>
+                    <strong>Segregación física en <code class="font-mono">rag-api</code>:</strong>
+                    El entorno Python carece por diseño de librerías de conexión a bases empresariales
+                    (<code class="font-mono">pyodbc</code>, <code class="font-mono">pymssql</code>,
+                    <code class="font-mono">sqlalchemy</code> prohibidas en arquitectura) y no posee cadenas de
+                    conexión a SQL Server. Su única salida posible es un documento JSON regido por esquema
+                    estricto (<code class="font-mono">QueryPlanCandidateV1</code>, <code class="font-mono">extra="forbid"</code>).
+                  </li>
+                  <li>
+                    <strong>Análisis del árbol sintáctico abstracto (<code class="font-mono">TSql160Parser</code>):</strong>
+                    Antes de tocar SQL Server, <code class="font-mono">ApiHub</code> parsea el SQL candidato con
+                    <code class="font-mono">Microsoft.SqlServer.TransactSql.ScriptDom</code>, exigiendo un único
+                    <code class="font-mono">QuerySpecification</code> (<code class="font-mono">SELECT</code> de solo lectura)
+                    y bloqueando determinísticamente <code class="font-mono">INSERT</code>, <code class="font-mono">UPDATE</code>,
+                    <code class="font-mono">DELETE</code>, <code class="font-mono">DROP</code>, <code class="font-mono">ALTER</code>,
+                    <code class="font-mono">TRUNCATE</code>, <code class="font-mono">EXEC</code>, <code class="font-mono">INTO</code>
+                    y lotes múltiples (<code class="font-mono">;</code>).
+                  </li>
+                  <li>
+                    <strong>Parametrización Dapper y techo <code class="font-mono">TOP (501)</code>:</strong>
+                    Todo filtro viaja en el diccionario tipado <code class="font-mono">@param</code> y se fuerza
+                    un techo técnico de 501 filas y timeout de 30 s contra denegación de servicio (DoS).
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transparencia sobre Problemas y Hallazgos Detectados en las Pruebas Reales -->
+          <div class="card bg-slate-50 border border-slate-300 rounded-md shadow-none">
+            <div class="card-body p-5 space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-2">
+                <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wide">
+                  3.3 Transparencia en Auditoría: Problemas y Hallazgos Detectados en Producción
+                </h3>
+                <span class="badge badge-neutral badge-sm font-mono text-[11px]">
+                  Auditoría sobre 58 turnos activos (86 trazas)
+                </span>
+              </div>
+              <p class="text-xs leading-relaxed text-slate-700 text-justify">
+                En cumplimiento del criterio de transparencia técnica, el análisis de la telemetría real del
+                servidor VPS (<code class="font-mono">Datos-estadisticos-VPS-2026-11-09.jsonl</code>) y de la
+                Sección 8.2.4 del informe de tesis permitió identificar no solo la efectividad de los bloqueos
+                de seguridad (<strong>0 vulneraciones de datos o ejecuciones destructivas</strong>), sino también
+                <strong>tres hallazgos operativos y de validación</strong> que se presentaron durante las pruebas reales:
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs text-slate-700">
+                <div class="bg-white p-3.5 rounded border border-slate-200 space-y-1">
+                  <div class="font-bold text-slate-900">
+                    1. Rechazos Controlados (<code class="font-mono">17.2 %</code> · 10/58 turnos)
+                  </div>
+                  <p class="leading-relaxed text-justify">
+                    En 10 turnos activos el sistema devolvió <code class="font-mono">failed_response</code>
+                    controlado porque el candidato generado intentaba referenciar atributos no permitidos por el
+                    alcance semántico o las guardas de esquema. El mecanismo <em>fail-closed</em> funcionó
+                    correctamente impidiendo la ejecución en SQL Server, aunque evidenció fricción cuando el
+                    usuario solicita cruces aún no cubiertos por el catálogo.
+                  </p>
+                </div>
+                <div class="bg-white p-3.5 rounded border border-slate-200 space-y-1">
+                  <div class="font-bold text-slate-900">
+                    2. Errores de Stream (<code class="font-mono">15.5 %</code> · 9/58 turnos)
+                  </div>
+                  <p class="leading-relaxed text-justify">
+                    Se registraron 9 eventos <code class="font-mono">stream.error</code> (6 durante el enrutamiento
+                    con <code class="font-mono">gpt-5.6-luna</code> y 3 en la síntesis SQL con
+                    <code class="font-mono">gpt-5.6-terra</code>) provocados por desalineaciones puntuales en los
+                    artefactos JSON de metadatos y alucinación de columnas fuera del subgrafo de
+                    <code class="font-mono">SchemaClosureEngine</code>.
+                  </p>
+                </div>
+                <div class="bg-white p-3.5 rounded border border-slate-200 space-y-1">
+                  <div class="font-bold text-slate-900">
+                    3. Brecha de Validación Estática Pre-Despliegue
+                  </div>
+                  <p class="leading-relaxed text-justify">
+                    Se detectó que las inconsistencias en las definiciones manuales del catálogo semántico
+                    solo eran descubiertas en tiempo de ejecución cuando la guardia bloqueaba el turno. Como
+                    mejora correctiva documentada, se estableció la incorporación de un validador estático
+                    <em>offline</em> en el pipeline CI/CD previo a la indexación en Milvus.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabla 3.1: Matriz de Pruebas de Seguridad Ejecutadas (Ancho Completo sin Scroll) -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">
+              Tabla 3.1 — Matriz de Pruebas de Seguridad Informática Ejecutadas y Resultados Auditados
+            </h4>
+            <div class="border border-slate-300 rounded-md overflow-hidden">
+              <table class="table table-xs w-full">
+                <thead class="bg-slate-100 text-slate-800 border-b border-slate-300">
+                  <tr>
+                    <th class="py-2 px-3">ID</th>
+                    <th class="py-2 px-3">Vector de Ataque / Escenario de Prueba</th>
+                    <th class="py-2 px-3">Mecanismo de Control Evaluado</th>
+                    <th class="py-2 px-3">Resultado Obtenido y Evidencia</th>
+                    <th class="py-2 px-3 text-right">Estado</th>
+                  </tr>
+                </thead>
+                <tbody class="text-xs text-slate-700 divide-y divide-slate-200">
+                  <tr>
+                    <td class="py-2 px-3 font-mono font-bold">SEC-01</td>
+                    <td class="py-2 px-3 font-medium">
+                      Acceso con contraseña válida omitiendo o falsificando el segundo factor (2FA)
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px]">ApiHub Auth + Verificador 2FA/MFA</td>
+                    <td class="py-2 px-3">
+                      Denegación inmediata de sesión; no se emite JWT ni se habilita el endpoint SSE del agente.
+                    </td>
+                    <td class="py-2 px-3 text-right font-mono font-semibold text-emerald-700">SUPERADO</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-mono font-bold">SEC-02</td>
+                    <td class="py-2 px-3 font-medium">
+                      Inyección de comandos destructivos (<code class="font-mono text-[11px]">DROP</code>, <code class="font-mono text-[11px]">UPDATE</code>, <code class="font-mono text-[11px]">DELETE</code>, <code class="font-mono text-[11px]">EXEC</code>) vía Prompt Injection
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px]">Microsoft ScriptDom AST (RN-01 / RN-02)</td>
+                    <td class="py-2 px-3">
+                      100 % rechazado en el parser AST antes de abrir conexión a SQL Server; 0 mutaciones en BD.
+                    </td>
+                    <td class="py-2 px-3 text-right font-mono font-semibold text-emerald-700">SUPERADO</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-mono font-bold">SEC-03</td>
+                    <td class="py-2 px-3 font-medium">
+                      Inyección SQL clásica mediante concatenación de literales en filtros de usuario
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px]">Dapper DynamicParameters (@param)</td>
+                    <td class="py-2 px-3">
+                      Separación estricta entre plantilla SQL y diccionario de parámetros tipados; neutralización total.
+                    </td>
+                    <td class="py-2 px-3 text-right font-mono font-semibold text-emerald-700">SUPERADO</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-mono font-bold">SEC-04</td>
+                    <td class="py-2 px-3 font-medium">
+                      Escalamiento horizontal de privilegios (consultar ventas o costos de otra sucursal/rol)
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px]">AuthorizationCatalogV1 (RN-03 / RF-01)</td>
+                    <td class="py-2 px-3">
+                      Revalidación de permisos en <code class="font-mono text-[11px]">ApiHub</code> previo a ejecutar; bloqueo de columnas y tablas sensibles.
+                    </td>
+                    <td class="py-2 px-3 text-right font-mono font-semibold text-emerald-700">SUPERADO</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-3 font-mono font-bold">SEC-05</td>
+                    <td class="py-2 px-3 font-medium">
+                      Ejecución autónoma de operación sensible (ajuste de inventario o bloqueo de cliente)
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px]">Guardia Operativa (RN-11 / RF-09)</td>
+                    <td class="py-2 px-3">
+                      El agente detiene la acción directa y registra únicamente un evento pendiente de autorización humana.
+                    </td>
+                    <td class="py-2 px-3 text-right font-mono font-semibold text-emerald-700">SUPERADO</td>
+                  </tr>
+                  <tr class="bg-amber-50/50">
+                    <td class="py-2 px-3 font-mono font-bold">SEC-06</td>
+                    <td class="py-2 px-3 font-medium">
+                      Generación de referencias a columnas fuera del subgrafo relacional o catálogo desalineado
+                    </td>
+                    <td class="py-2 px-3 font-mono text-[11px]">SchemaClosureEngine + Guardias de Esquema</td>
+                    <td class="py-2 px-3">
+                      Contención segura (<em>fail-closed</em>), pero generó 10 <code class="font-mono text-[11px]">failed_response</code> (17.2 %) y 9 <code class="font-mono text-[11px]">stream.error</code> (15.5 %).
+                    </td>
+                    <td class="py-2 px-3 text-right font-mono font-semibold text-amber-700">HALLAZGO MITIGADO</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Evidencia de Trazabilidad de Rechazo Controlado en el Log VPS -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">
+              Evidencia de Contención Fail-Closed en el Log VPS (<code class="font-mono text-[11px] bg-slate-100 px-1.5 py-0.5 rounded normal-case">Datos-estadisticos-VPS-2026-11-09.jsonl</code>)
+            </h4>
+            <div class="mockup-code bg-[#f8fafc] text-[#0f172a] border border-slate-300 shadow-none text-xs w-full">
+              <pre data-prefix="1"><code>{`{"source": "rag_log", "event": "stream.completed", "status": "failed", "response_kind": "error",`}</code></pre>
+              <pre data-prefix="2"><code>{` "conversation_id": "2c8d41f09a6e17b53d80e412", "turn_id": "9f14a87c3b204e618d52c903",`}</code></pre>
+              <pre data-prefix="3"><code>{` "duration_ms": 6412.84, "sql_executed": false, "security_boundary": "fail_closed_schema_guard"}`}</code></pre>
+              <pre data-prefix="4"><code>{`// Cuando un candidato incumple el contrato o el alcance autorizado, se aborta sin ejecutar SQL.`}</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- SECCIÓN 4: CASO DE USO REAL Y DASHBOARDS DE PRODUCCIÓN (VPS)    -->
+        <!-- =============================================================== -->
+        <section
+          id="caso-uso-real"
+          class="page-break bg-white text-[#0f172a] shadow-md border border-slate-200/80 rounded-xs px-8 py-10 sm:px-12 sm:py-12 space-y-6 print:shadow-none print:border-0 print:p-0"
+        >
+          <!-- Encabezado de Sección -->
+          <div class="border-b-2 border-slate-800 pb-3 flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <span class="badge badge-primary badge-sm font-semibold uppercase tracking-wider mb-1">
+                Sección 4 · Caso de Uso Operativo y Telemetría Real en Servidor VPS
+              </span>
+              <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+                4. Caso de Uso de la Aplicación donde Refleje Resultados Reales
+              </h2>
+            </div>
+            <span class="text-xs font-mono text-slate-500">
+              Anexo Público: github.com/WilsonMundo/anexo-proyecto
+            </span>
+          </div>
+
+          <!-- Descripción del Caso de Uso Real en el Ecosistema ERP -->
+          <p class="text-sm leading-relaxed text-slate-700 text-justify">
+            Para demostrar el funcionamiento real de la aplicación en un entorno productivo empresarial,
+            se auditó la operación del asistente agéntico desplegado en el servidor VPS en contenedores
+            activos (<code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">rag-api-rag-api-1</code>
+            con huella <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">sha256:ac390f58191f...</code>
+            y <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">apihub-apihub-1</code>
+            con huella <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">sha256:88ad1b2318cf...</code>)
+            durante la ventana del <strong>19 de octubre al 10 de noviembre de 2026</strong>. A partir de
+            <strong>114,002 líneas de bitácora</strong> se extrajeron <strong>2,505 registros estructurados</strong>
+            (<code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">1,514 rag_log</code> y
+            <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">989 rag_trace</code>) correspondientes a
+            <strong>42 conversaciones</strong> y <strong>86 turnos totales</strong> (<strong>59 preguntas originales del usuario</strong>
+            <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">user_message</code> y
+            <strong>27 respuestas de aclaración</strong> <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">clarification_response</code>),
+            cuyo lote íntegro (<code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">Datos-estadisticos-VPS-2026-11-09.jsonl</code>,
+            <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">SHA-256: 0e20ca6141d315f6...</code>) se encuentra publicado en el repositorio oficial de anexos:
+            <a href="https://github.com/WilsonMundo/anexo-proyecto" target="_blank" rel="noopener noreferrer" class="font-mono text-xs font-bold text-primary underline">https://github.com/WilsonMundo/anexo-proyecto</a>.
+          </p>
+
+          <!-- Indicadores Globales del Caso de Uso en Producción (4-Column Stats sin Scroll) -->
+          <div class="stats grid grid-cols-2 sm:grid-cols-4 w-full bg-slate-50 border border-slate-300 rounded-md shadow-none overflow-visible">
+            <div class="stat py-3 px-3.5 border-b sm:border-b-0 sm:border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Latencia Media Candidato E2E
+              </div>
+              <div class="stat-value text-base sm:text-lg text-primary font-extrabold my-0.5">
+                11.14 s
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                Mediana P50: 11.04 s (Mínimo: 4.79 s en Resume)
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5 border-b sm:border-b-0 sm:border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Éxito al 1er Intento (Terra SQL)
+              </div>
+              <div class="stat-value text-base sm:text-lg text-emerald-700 font-extrabold my-0.5">
+                100 % (27/27)
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                attempt: 1 (4.85 s media · 5,403 tok caché fijo)
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5 border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Tokens Procesados y Caché
+              </div>
+              <div class="stat-value text-base sm:text-lg text-slate-900 font-extrabold my-0.5">
+                1.33 M tok
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                300,592 en caché (22.53 % global · 61.6 % Router)
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Evidencia Compilada (Sidecar)
+              </div>
+              <div class="stat-value text-base sm:text-lg text-slate-900 font-extrabold my-0.5">
+                20.71 ms
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                Lookup: 0.00 ms · Build: 0.36 ms (28 selecciones)
+              </div>
+            </div>
+          </div>
+
+          <!-- Recorrido Real de un Turno End-to-End (Flujo de Consultas Analíticas / Matriz de Ventas) -->
+          <div class="card bg-white border border-slate-300 rounded-md shadow-none">
+            <div class="card-body p-5 space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-2">
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900">
+                    4.1 Anatomía del Caso de Uso Real: Consulta Analítica de Ventas por Sucursal y Período
+                  </h3>
+                  <p class="text-[11px] text-slate-600">
+                    Flujo ejecutado desde la petición en lenguaje natural en <code class="font-mono">AppWeb (Angular 22)</code> hasta la entrega del sobre <code class="font-mono">QueryPlanCandidateV1</code> y renderizado en <code class="font-mono">DevExtreme</code>
+                  </p>
+                </div>
+                <span class="badge badge-outline badge-sm font-mono text-[11px]">
+                  Prompt 6.27+query-agent-1.0
+                </span>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-4 gap-3 text-xs text-slate-700">
+                <div class="bg-slate-50 p-3 rounded border border-slate-200 space-y-1">
+                  <div class="font-bold text-slate-900">
+                    1. Entrada y Router (<code class="font-mono">Luna</code>)
+                  </div>
+                  <p class="leading-relaxed">
+                    El usuario autenticado con 2FA envía su consulta (<code class="font-mono">user_message</code>).
+                    <code class="font-mono">classify_intent</code> evalúa la intención en <strong>2,289.3 ms</strong>
+                    (P50: <strong>1,988.8 ms</strong>) reutilizando un <strong>61.6 % de tokens en caché</strong>.
+                  </p>
+                </div>
+                <div class="bg-slate-50 p-3 rounded border border-slate-200 space-y-1">
+                  <div class="font-bold text-slate-900">
+                    2. Plan Semántico o Resume
+                  </div>
+                  <p class="leading-relaxed">
+                    Si falta el rango temporal, pausa en <code class="font-mono">await_human_input</code>; al
+                    responder el usuario (<code class="font-mono">clarification_response</code>),
+                    <code class="font-mono">resume_clarification</code> reanuda en <strong>9.5 ms</strong> sin
+                    reclasificar todo el turno.
+                  </p>
+                </div>
+                <div class="bg-slate-50 p-3 rounded border border-slate-200 space-y-1">
+                  <div class="font-bold text-slate-900">
+                    3. Sidecar + Milvus RAG
+                  </div>
+                  <p class="leading-relaxed">
+                    El selector compilado filtra el subgrafo relacional en <strong>20.35 ms</strong>
+                    (<code class="font-mono">sidecar_lookup: 0.00 ms</code>) y Milvus recupera los ejemplos
+                    vectoriales Top-K con mediana <strong>P50 de 399.0 ms</strong>.
+                  </p>
+                </div>
+                <div class="bg-slate-50 p-3 rounded border border-slate-200 space-y-1">
+                  <div class="font-bold text-slate-900">
+                    4. Síntesis SQL (<code class="font-mono">Terra</code>) + UI
+                  </div>
+                  <p class="leading-relaxed">
+                    <code class="font-mono">gpt-5.6-terra</code> genera el T-SQL parametrizado en
+                    <strong>4,850.3 ms</strong> (P50: <strong>4,783.6 ms</strong>) al primer intento (100 %).
+                    <code class="font-mono">ApiHub</code> valida el AST y entrega <code class="font-mono">QueryResultV2</code>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============================================================= -->
+          <!-- DASHBOARD VISUAL 1: LATENCIA APILADA (18 CANDIDATOS) Y P50    -->
+          <!-- ============================================================= -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Panel A: Desglose de Latencia por Subsistema (Promedio vs Mediana P50) -->
+            <div class="card bg-white border border-slate-300 rounded-md shadow-none">
+              <div class="card-body p-4 space-y-3">
+                <div class="flex items-start justify-between gap-2 border-b border-slate-200 pb-2">
+                  <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900">
+                      Dashboard 4.1 — Promedio vs. Mediana (P50) por Subsistema
+                    </h4>
+                    <p class="text-[11px] text-slate-600">
+                      Contraste entre etapas deterministas compiladas (&lt; 21 ms) y llamadas de inferencia LLM (n = 18 candidatos)
+                    </p>
+                  </div>
+                  <span class="badge badge-primary badge-sm font-mono text-[10px]">P50 Total: 11.04 s</span>
+                </div>
+
+                <!-- Gráfico Vectorial de Barras Horizontales Comparativas (Alto Contraste Corporativo) -->
+                <div class="space-y-2 text-[11px]">
+                  <!-- Total E2E -->
+                  <div class="space-y-0.5">
+                    <div class="flex justify-between font-semibold text-slate-900">
+                      <span>Total E2E Candidato SQL</span>
+                      <span class="font-mono">Media: 11,137.8 ms | P50: 11,041.6 ms</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-3.5 rounded overflow-hidden border border-slate-300 flex">
+                      <div class="bg-blue-800 h-full" style="width: 100%"></div>
+                    </div>
+                  </div>
+
+                  <!-- Terra SQL Gen -->
+                  <div class="space-y-0.5">
+                    <div class="flex justify-between font-medium text-slate-800">
+                      <span>Query Gen + Candidate Build (<code class="font-mono">Terra</code>)</span>
+                      <span class="font-mono">Media: 5,420.1 ms | P50: 4,783.6 ms</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-3 rounded overflow-hidden border border-slate-200 flex">
+                      <div class="bg-emerald-700 h-full" style="width: 48.7%"></div>
+                    </div>
+                  </div>
+
+                  <!-- Semantic Planning Luna -->
+                  <div class="space-y-0.5">
+                    <div class="flex justify-between font-medium text-slate-800">
+                      <span>Semantic Planning (<code class="font-mono">Luna</code>)</span>
+                      <span class="font-mono">Media: 3,420.9 ms | P50: 3,135.8 ms</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-3 rounded overflow-hidden border border-slate-200 flex">
+                      <div class="bg-indigo-700 h-full" style="width: 30.7%"></div>
+                    </div>
+                  </div>
+
+                  <!-- Intent Classification Luna -->
+                  <div class="space-y-0.5">
+                    <div class="flex justify-between font-medium text-slate-800">
+                      <span>Intent Classification (<code class="font-mono">Luna</code>)</span>
+                      <span class="font-mono">Media: 2,665.0 ms | P50: 2,280.8 ms</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-3 rounded overflow-hidden border border-slate-200 flex">
+                      <div class="bg-sky-700 h-full" style="width: 23.9%"></div>
+                    </div>
+                  </div>
+
+                  <!-- Milvus RAG -->
+                  <div class="space-y-0.5">
+                    <div class="flex justify-between font-medium text-slate-800">
+                      <span>Milvus RAG Retrieval (<code class="font-mono">COSINE Top-K</code>)</span>
+                      <span class="font-mono">Media: 784.2 ms | P50: 399.0 ms</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-3 rounded overflow-hidden border border-slate-200 flex">
+                      <div class="bg-purple-700 h-full" style="width: 7.0%"></div>
+                    </div>
+                  </div>
+
+                  <!-- Evidence Selection Sidecar -->
+                  <div class="space-y-0.5">
+                    <div class="flex justify-between font-medium text-slate-800">
+                      <span>Evidence Selection (<code class="font-mono">Sidecar Compilado</code>)</span>
+                      <span class="font-mono text-emerald-800 font-bold">Media: 20.7 ms | P50: 20.4 ms</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-2.5 rounded overflow-hidden border border-slate-200 flex">
+                      <div class="bg-emerald-600 h-full" style="width: 2.0%"></div>
+                    </div>
+                  </div>
+
+                  <!-- Resolvers Deterministas -->
+                  <div class="space-y-0.5">
+                    <div class="flex justify-between font-medium text-slate-800">
+                      <span>Resolvers (Temporal + Context + Ambiguity)</span>
+                      <span class="font-mono text-emerald-800 font-bold">Media: 2.3 ms | P50: 2.0 ms</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-2.5 rounded overflow-hidden border border-slate-200 flex">
+                      <div class="bg-emerald-600 h-full" style="width: 1.0%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel B: Dashboard de Clasificación de las 59 Preguntas Originales del Usuario -->
+            <div class="card bg-white border border-slate-300 rounded-md shadow-none">
+              <div class="card-body p-4 space-y-3">
+                <div class="flex items-start justify-between gap-2 border-b border-slate-200 pb-2">
+                  <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900">
+                      Dashboard 4.2 — Rutas de las 59 Preguntas (<code class="font-mono">user_message</code>)
+                    </h4>
+                    <p class="text-[11px] text-slate-600">
+                      Distribución operativa en el VPS excluyendo las 27 respuestas de aclaración (<code class="font-mono">clarification_response</code>)
+                    </p>
+                  </div>
+                  <span class="badge badge-outline badge-sm font-mono text-[10px]">59 Preguntas</span>
+                </div>
+
+                <div class="space-y-2.5 text-[11px]">
+                  <!-- Ruta 1: Consulta SQL Candidata (29) -->
+                  <div class="space-y-0.5">
+                    <div class="flex justify-between font-semibold text-slate-900">
+                      <span>1. Consulta SQL Candidata (Shadow Gate · 14 nodos prom.)</span>
+                      <span class="font-mono font-bold">29 turnos (49.2 %)</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-3.5 rounded overflow-hidden border border-slate-300">
+                      <div class="bg-blue-800 h-full" style="width: 49.2%"></div>
+                    </div>
+                  </div>
+
+                  <!-- Ruta 2: Solicitud con Ambigüedad -> Clarificación (16) -->
+                  <div class="space-y-0.5">
+                    <div class="flex justify-between font-semibold text-slate-900">
+                      <span>2. Solicitud con Ambigüedad → Clarificación (9 nodos prom.)</span>
+                      <span class="font-mono font-bold">16 turnos (27.1 %)</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-3.5 rounded overflow-hidden border border-slate-300">
+                      <div class="bg-amber-600 h-full" style="width: 27.1%"></div>
+                    </div>
+                  </div>
+
+                  <!-- Ruta 3: Planificación Semántica (8) -->
+                  <div class="space-y-0.5">
+                    <div class="flex justify-between font-medium text-slate-800">
+                      <span>3. Planificación Semántica de Consulta (6 nodos prom.)</span>
+                      <span class="font-mono">8 turnos (13.6 %)</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-3 rounded overflow-hidden border border-slate-200">
+                      <div class="bg-indigo-700 h-full" style="width: 13.6%"></div>
+                    </div>
+                  </div>
+
+                  <!-- Ruta 4: Analítica Delegada (3) -->
+                  <div class="space-y-0.5">
+                    <div class="flex justify-between font-medium text-slate-800">
+                      <span>4. Analítica Delegada / Serie y Forecast (13 nodos prom.)</span>
+                      <span class="font-mono">3 turnos (5.1 %)</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-3 rounded overflow-hidden border border-slate-200">
+                      <div class="bg-purple-700 h-full" style="width: 5.1%"></div>
+                    </div>
+                  </div>
+
+                  <!-- Ruta 5: Chat Directo (3) -->
+                  <div class="space-y-0.5">
+                    <div class="flex justify-between font-medium text-slate-800">
+                      <span>5. Chat / Conversación Directa (6 nodos prom.)</span>
+                      <span class="font-mono">3 turnos (5.1 %)</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-3 rounded overflow-hidden border border-slate-200">
+                      <div class="bg-emerald-700 h-full" style="width: 5.1%"></div>
+                    </div>
+                  </div>
+
+                  <!-- Separación de Entradas en rag_trace (86 totales) -->
+                  <div class="pt-2 mt-2 border-t border-slate-200 grid grid-cols-2 gap-2">
+                    <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                      <span class="block text-[10px] uppercase font-bold text-slate-500">Preguntas Iniciales</span>
+                      <span class="font-mono font-bold text-xs text-slate-900">59 user_message (68.6 %)</span>
+                    </div>
+                    <div class="bg-slate-50 p-2 rounded border border-slate-200">
+                      <span class="block text-[10px] uppercase font-bold text-slate-500">Respuestas Aclaración</span>
+                      <span class="font-mono font-bold text-xs text-emerald-800">27 clarification (31.4 %)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============================================================= -->
+          <!-- DASHBOARD VISUAL 2: EVOLUCIÓN DE PROMPT CACHING Y OPERACIONES -->
+          <!-- ============================================================= -->
+          <div class="card bg-white border border-slate-300 rounded-md shadow-none">
+            <div class="card-body p-4 space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-2">
+                <div>
+                  <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900">
+                    Dashboard 4.3 — Auditoría de Consumo de Tokens y Efectividad de Prompt Caching (123 Llamadas OpenAI)
+                  </h4>
+                  <p class="text-[11px] text-slate-600">
+                    Verificación en producción del reordenamiento de prompt <code class="font-mono">6.27+query-agent-1.0</code>: bloque constante de <strong>5,403 tokens cacheados</strong> en 17 de las 27 generaciones SQL de <code class="font-mono">gpt-5.6-terra</code>
+                  </p>
+                </div>
+                <span class="badge badge-outline badge-sm font-mono text-[11px]">
+                  300,592 / 1,334,317 Tokens en Caché (22.53 %)
+                </span>
+              </div>
+
+              <!-- Gráfico SVG Vectorial de Alto Contraste: Las 27 Llamadas a Terra SQL (Entrada Total vs 5,403 Cacheados) -->
+              <div class="w-full bg-slate-50 border border-slate-200 rounded p-3">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-2 text-[11px]">
+                  <span class="font-bold text-slate-800">
+                    Evolución de las 27 Generaciones SQL en <code class="font-mono">gpt-5.6-terra</code> (<code class="font-mono">query_generation_completed</code>)
+                  </span>
+                  <div class="flex items-center gap-4 text-[10px] font-semibold">
+                    <span class="inline-flex items-center gap-1.5 text-slate-700">
+                      <span class="w-3 h-2.5 inline-block bg-slate-400 border border-slate-600 rounded-2xs"></span>
+                      Tokens Entrada No-Cacheados
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 text-emerald-800">
+                      <span class="w-3 h-2.5 inline-block bg-emerald-600 border border-emerald-800 rounded-2xs"></span>
+                      Bloque Fijo en Caché (5,403 tok · hasta 37.9 %)
+                    </span>
+                  </div>
+                </div>
+
+                <svg viewBox="0 0 680 145" class="w-full h-auto block" role="img" aria-label="Gráfico de barras de las 27 llamadas a gpt-5.6-terra">
+                  <!-- Líneas guía horizontales -->
+                  <line x1="36" y1="15" x2="670" y2="15" stroke="#cbd5e1" stroke-dasharray="2,2" stroke-width="0.7" />
+                  <line x1="36" y1="50" x2="670" y2="50" stroke="#cbd5e1" stroke-dasharray="2,2" stroke-width="0.7" />
+                  <line x1="36" y1="85" x2="670" y2="85" stroke="#cbd5e1" stroke-dasharray="2,2" stroke-width="0.7" />
+                  <line x1="36" y1="120" x2="670" y2="120" stroke="#475569" stroke-width="1" />
+
+                  <!-- Etiquetas Eje Y -->
+                  <text x="32" y="18" text-anchor="end" font-size="8" fill="#334155" font-family="monospace">35k</text>
+                  <text x="32" y="53" text-anchor="end" font-size="8" fill="#334155" font-family="monospace">23k</text>
+                  <text x="32" y="88" text-anchor="end" font-size="8" fill="#334155" font-family="monospace">12k</text>
+                  <text x="32" y="123" text-anchor="end" font-size="8" fill="#334155" font-family="monospace">0</text>
+
+                  <!-- 27 Barras apiladas exactas de InformeProduccion.html (escala: 35,000 tok = 105px -> 0.003 px/tok) -->
+                  {[
+                    { id: 1, u: 21314, c: 0 },
+                    { id: 2, u: 16864, c: 0 },
+                    { id: 3, u: 15409, c: 0 },
+                    { id: 4, u: 13760, c: 5403 },
+                    { id: 5, u: 19705, c: 0 },
+                    { id: 6, u: 14304, c: 5403 },
+                    { id: 7, u: 11644, c: 5403 },
+                    { id: 8, u: 19704, c: 0 },
+                    { id: 9, u: 34129, c: 0 },
+                    { id: 10, u: 11448, c: 5403 },
+                    { id: 11, u: 11628, c: 5403 },
+                    { id: 12, u: 12886, c: 5403 },
+                    { id: 13, u: 22318, c: 5403 },
+                    { id: 14, u: 22353, c: 5403 },
+                    { id: 15, u: 16575, c: 0 },
+                    { id: 16, u: 12132, c: 5403 },
+                    { id: 17, u: 8837, c: 5403 },
+                    { id: 18, u: 12442, c: 5403 },
+                    { id: 19, u: 15867, c: 5403 },
+                    { id: 20, u: 28558, c: 5403 },
+                    { id: 21, u: 16253, c: 0 },
+                    { id: 22, u: 10908, c: 5191 },
+                    { id: 23, u: 17446, c: 0 },
+                    { id: 24, u: 23177, c: 5403 },
+                    { id: 25, u: 17090, c: 0 },
+                    { id: 26, u: 14852, c: 5403 },
+                    { id: 27, u: 11966, c: 5403 },
+                  ].map((item, idx) => {
+                    const x = 42 + idx * 23.2;
+                    const hC = Math.round(item.c * 0.003 * 10) / 10;
+                    const hU = Math.round(item.u * 0.003 * 10) / 10;
+                    const yC = 120 - hC;
+                    const yU = yC - hU;
+                    return (
+                      <g>
+                        <rect x={x} y={yU} width="15" height={hU} fill="#94a3b8" stroke="#475569" stroke-width="0.5" />
+                        {item.c > 0 && (
+                          <rect x={x} y={yC} width="15" height={hC} fill="#059669" stroke="#065f46" stroke-width="0.5" />
+                        )}
+                        <text x={x + 7.5} y="133" text-anchor="middle" font-size="7.5" fill="#1e293b" font-family="monospace">
+                          #{item.id}
+                        </text>
+                      </g>
+                    );
+                  })}
+                </svg>
+              </div>
+
+              <!-- Tabla Consolidada de Operaciones LLM y Prompt Caching -->
+              <div class="border border-slate-300 rounded-md overflow-hidden">
+                <table class="table table-xs w-full">
+                  <thead class="bg-slate-100 text-slate-800 border-b border-slate-300">
+                    <tr>
+                      <th class="py-1.5 px-2.5">Operación / Nodo</th>
+                      <th class="py-1.5 px-2.5">Modelo LLM</th>
+                      <th class="py-1.5 px-2.5">Versión Prompt</th>
+                      <th class="py-1.5 px-2.5 text-right">Llamadas</th>
+                      <th class="py-1.5 px-2.5 text-right">Tokens Entrada</th>
+                      <th class="py-1.5 px-2.5 text-right">Tokens Caché</th>
+                      <th class="py-1.5 px-2.5 text-right">% Caché</th>
+                      <th class="py-1.5 px-2.5 text-right">Tokens Salida</th>
+                      <th class="py-1.5 px-2.5 text-right">Latencia Media</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-xs text-slate-700 divide-y divide-slate-200">
+                    <tr>
+                      <td class="py-1.5 px-2.5 font-mono text-[11px] font-semibold">intent_classification</td>
+                      <td class="py-1.5 px-2.5 font-mono text-[11px]">gpt-5.6-luna</td>
+                      <td class="py-1.5 px-2.5 font-mono text-[11px]">2.5 (30) / 1.3 (9)</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">39</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">53,507</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono font-bold text-emerald-700">32,943</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono font-bold text-emerald-700">61.6 %</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">2,966</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">2,289.3 ms</td>
+                    </tr>
+                    <tr>
+                      <td class="py-1.5 px-2.5 font-mono text-[11px] font-semibold">semantic_planning</td>
+                      <td class="py-1.5 px-2.5 font-mono text-[11px]">gpt-5.6-luna</td>
+                      <td class="py-1.5 px-2.5 font-mono text-[11px]">1.31</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">39</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">549,220</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">106,647</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">19.4 %</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">9,829</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">3,453.0 ms</td>
+                    </tr>
+                    <tr>
+                      <td class="py-1.5 px-2.5 font-mono text-[11px] font-semibold">query_generation_completed</td>
+                      <td class="py-1.5 px-2.5 font-mono text-[11px]">gpt-5.6-terra</td>
+                      <td class="py-1.5 px-2.5 font-mono text-[11px]">6.27+query-agent-1.0</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">27</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">545,208</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono font-bold text-primary">91,639</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono font-semibold">16.8 % (37.9 % máx)</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">17,807</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">4,850.3 ms</td>
+                    </tr>
+                    <tr>
+                      <td class="py-1.5 px-2.5 font-mono text-[11px] font-semibold">semantic_comparison_repair</td>
+                      <td class="py-1.5 px-2.5 font-mono text-[11px]">gpt-5.6-luna</td>
+                      <td class="py-1.5 px-2.5 font-mono text-[11px]">1.31 (Repair)</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">10</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">147,573</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">50,952</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">34.5 %</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">3,445</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">—</td>
+                    </tr>
+                    <tr>
+                      <td class="py-1.5 px-2.5 font-mono text-[11px] font-semibold">analysis_planning + revision</td>
+                      <td class="py-1.5 px-2.5 font-mono text-[11px]">Luna (5) / Terra (3)</td>
+                      <td class="py-1.5 px-2.5 font-mono text-[11px]">1.9 / 1.22 / 1.0</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">8</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">38,809</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">18,411</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">47.4 %</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">2,777</td>
+                      <td class="py-1.5 px-2.5 text-right font-mono">3,868.5 ms</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============================================================= -->
+          <!-- TABLA 4.1: LOS 18 CANDIDATOS END-TO-END AUDITADOS EN EL VPS   -->
+          <!-- ============================================================= -->
+          <div class="space-y-2">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">
+                Tabla 4.1 — Registro de Telemetría de los 18 Candidatos End-to-End en Producción (<code class="font-mono text-[11px] bg-slate-100 px-1 rounded normal-case">assistant_candidate_performance</code>)
+              </h4>
+              <span class="text-[11px] text-slate-600">
+                Las filas resaltadas (<code class="font-mono">Resume</code>) corresponden a reanudaciones de LangGraph tras aclaración del usuario
+              </span>
+            </div>
+            <div class="border border-slate-300 rounded-md overflow-hidden">
+              <table class="table table-xs w-full">
+                <thead class="bg-slate-100 text-slate-800 border-b border-slate-300">
+                  <tr>
+                    <th class="py-1.5 px-2">#</th>
+                    <th class="py-1.5 px-2">Fecha UTC</th>
+                    <th class="py-1.5 px-2">Turn ID (SHA-256)</th>
+                    <th class="py-1.5 px-2 text-right">Router (ms)</th>
+                    <th class="py-1.5 px-2 text-right">Plan Semántico (ms)</th>
+                    <th class="py-1.5 px-2 text-right">Resolvers (ms)</th>
+                    <th class="py-1.5 px-2 text-right">Milvus RAG (ms)</th>
+                    <th class="py-1.5 px-2 text-right">Terra SQL + Build (ms)</th>
+                    <th class="py-1.5 px-2 text-right">Total Turno (ms)</th>
+                  </tr>
+                </thead>
+                <tbody class="text-[11px] text-slate-700 divide-y divide-slate-200 font-mono">
+                  <tr>
+                    <td class="py-1 px-2">01</td>
+                    <td class="py-1 px-2">2026-10-21 08:47</td>
+                    <td class="py-1 px-2">b506f53b31b1</td>
+                    <td class="py-1 px-2 text-right">5,799.5</td>
+                    <td class="py-1 px-2 text-right">3,522.6</td>
+                    <td class="py-1 px-2 text-right">2.4</td>
+                    <td class="py-1 px-2 text-right">2,305.1</td>
+                    <td class="py-1 px-2 text-right">6,833.6</td>
+                    <td class="py-1 px-2 text-right font-bold text-slate-900">18,595.6</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2">02</td>
+                    <td class="py-1 px-2">2026-10-23 21:39</td>
+                    <td class="py-1 px-2">7692ccd644c8</td>
+                    <td class="py-1 px-2 text-right">1,871.4</td>
+                    <td class="py-1 px-2 text-right">2,801.6</td>
+                    <td class="py-1 px-2 text-right">2.1</td>
+                    <td class="py-1 px-2 text-right">2,436.5</td>
+                    <td class="py-1 px-2 text-right">9,026.0</td>
+                    <td class="py-1 px-2 text-right font-bold text-slate-900">16,270.3</td>
+                  </tr>
+                  <tr class="bg-emerald-50/70">
+                    <td class="py-1 px-2 font-bold">03</td>
+                    <td class="py-1 px-2">2026-10-23 21:49</td>
+                    <td class="py-1 px-2 font-bold text-emerald-800">8505d3de (Resume)</td>
+                    <td class="py-1 px-2 text-right">— (Resume)</td>
+                    <td class="py-1 px-2 text-right">— (Resume)</td>
+                    <td class="py-1 px-2 text-right">1.8</td>
+                    <td class="py-1 px-2 text-right">416.9</td>
+                    <td class="py-1 px-2 text-right">4,292.8</td>
+                    <td class="py-1 px-2 text-right font-bold text-emerald-800">4,792.9</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2">04</td>
+                    <td class="py-1 px-2">2026-10-24 05:05</td>
+                    <td class="py-1 px-2">a3289a249f21</td>
+                    <td class="py-1 px-2 text-right">3,810.9</td>
+                    <td class="py-1 px-2 text-right">2,985.4</td>
+                    <td class="py-1 px-2 text-right">2.5</td>
+                    <td class="py-1 px-2 text-right">1,650.9</td>
+                    <td class="py-1 px-2 text-right">8,180.9</td>
+                    <td class="py-1 px-2 text-right font-bold text-slate-900">16,797.9</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2">05</td>
+                    <td class="py-1 px-2">2026-10-24 05:09</td>
+                    <td class="py-1 px-2">69ff02b64f4f</td>
+                    <td class="py-1 px-2 text-right">1,194.1</td>
+                    <td class="py-1 px-2 text-right">2,468.9</td>
+                    <td class="py-1 px-2 text-right">1.9</td>
+                    <td class="py-1 px-2 text-right">305.7</td>
+                    <td class="py-1 px-2 text-right">4,784.9</td>
+                    <td class="py-1 px-2 text-right font-bold text-slate-900">8,910.8</td>
+                  </tr>
+                  <tr class="bg-emerald-50/70">
+                    <td class="py-1 px-2 font-bold">06</td>
+                    <td class="py-1 px-2">2026-10-24 05:13</td>
+                    <td class="py-1 px-2 font-bold text-emerald-800">53984ff7 (Resume)</td>
+                    <td class="py-1 px-2 text-right">— (Resume)</td>
+                    <td class="py-1 px-2 text-right">2,809.6</td>
+                    <td class="py-1 px-2 text-right">2.0</td>
+                    <td class="py-1 px-2 text-right">921.5</td>
+                    <td class="py-1 px-2 text-right">3,706.8</td>
+                    <td class="py-1 px-2 text-right font-bold text-emerald-800">7,557.4</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2">07</td>
+                    <td class="py-1 px-2">2026-10-24 21:06</td>
+                    <td class="py-1 px-2">214094ac8388</td>
+                    <td class="py-1 px-2 text-right">3,458.6</td>
+                    <td class="py-1 px-2 text-right">3,128.9</td>
+                    <td class="py-1 px-2 text-right">2.2</td>
+                    <td class="py-1 px-2 text-right">1,902.3</td>
+                    <td class="py-1 px-2 text-right">4,627.1</td>
+                    <td class="py-1 px-2 text-right font-bold text-slate-900">13,268.7</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2">08</td>
+                    <td class="py-1 px-2">2026-10-30 03:16</td>
+                    <td class="py-1 px-2">37f34e9e91c5</td>
+                    <td class="py-1 px-2 text-right">2,782.9</td>
+                    <td class="py-1 px-2 text-right">3,135.8</td>
+                    <td class="py-1 px-2 text-right">2.3</td>
+                    <td class="py-1 px-2 text-right">919.5</td>
+                    <td class="py-1 px-2 text-right">6,691.8</td>
+                    <td class="py-1 px-2 text-right font-bold text-slate-900">13,705.2</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2">09</td>
+                    <td class="py-1 px-2">2026-10-30 03:19</td>
+                    <td class="py-1 px-2">7e4372670a74</td>
+                    <td class="py-1 px-2 text-right">1,796.2</td>
+                    <td class="py-1 px-2 text-right">4,007.7</td>
+                    <td class="py-1 px-2 text-right">2.1</td>
+                    <td class="py-1 px-2 text-right">606.3</td>
+                    <td class="py-1 px-2 text-right">4,574.4</td>
+                    <td class="py-1 px-2 text-right font-bold text-slate-900">11,145.6</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2">10</td>
+                    <td class="py-1 px-2">2026-10-30 03:20</td>
+                    <td class="py-1 px-2">ba620a7e85b3</td>
+                    <td class="py-1 px-2 text-right">2,586.3</td>
+                    <td class="py-1 px-2 text-right">4,461.3</td>
+                    <td class="py-1 px-2 text-right">1.8</td>
+                    <td class="py-1 px-2 text-right">195.4</td>
+                    <td class="py-1 px-2 text-right">4,015.4</td>
+                    <td class="py-1 px-2 text-right font-bold text-slate-900">11,426.3</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2">11</td>
+                    <td class="py-1 px-2">2026-10-30 03:31</td>
+                    <td class="py-1 px-2">7f0f885fb76e</td>
+                    <td class="py-1 px-2 text-right">1,776.9</td>
+                    <td class="py-1 px-2 text-right">4,672.0</td>
+                    <td class="py-1 px-2 text-right">1.9</td>
+                    <td class="py-1 px-2 text-right">217.0</td>
+                    <td class="py-1 px-2 text-right">4,201.1</td>
+                    <td class="py-1 px-2 text-right font-bold text-slate-900">11,041.6</td>
+                  </tr>
+                  <tr class="bg-emerald-50/70">
+                    <td class="py-1 px-2 font-bold">12</td>
+                    <td class="py-1 px-2">2026-10-31 02:34</td>
+                    <td class="py-1 px-2 font-bold text-emerald-800">04aa86a6 (Resume)</td>
+                    <td class="py-1 px-2 text-right">— (Resume)</td>
+                    <td class="py-1 px-2 text-right">— (Resume)</td>
+                    <td class="py-1 px-2 text-right">1.5</td>
+                    <td class="py-1 px-2 text-right">394.1</td>
+                    <td class="py-1 px-2 text-right">5,303.7</td>
+                    <td class="py-1 px-2 text-right font-bold text-emerald-800">5,830.5</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2">13</td>
+                    <td class="py-1 px-2">2026-10-31 02:34</td>
+                    <td class="py-1 px-2">32a4cf2f7b19</td>
+                    <td class="py-1 px-2 text-right">1,480.8</td>
+                    <td class="py-1 px-2 text-right">2,859.0</td>
+                    <td class="py-1 px-2 text-right">1.7</td>
+                    <td class="py-1 px-2 text-right">170.9</td>
+                    <td class="py-1 px-2 text-right">4,185.3</td>
+                    <td class="py-1 px-2 text-right font-bold text-slate-900">8,861.2</td>
+                  </tr>
+                  <tr class="bg-emerald-50/70">
+                    <td class="py-1 px-2 font-bold">14</td>
+                    <td class="py-1 px-2">2026-10-31 02:35</td>
+                    <td class="py-1 px-2 font-bold text-emerald-800">e4e157f8 (Resume)</td>
+                    <td class="py-1 px-2 text-right">— (Resume)</td>
+                    <td class="py-1 px-2 text-right">2,696.9</td>
+                    <td class="py-1 px-2 text-right">1.6</td>
+                    <td class="py-1 px-2 text-right">333.3</td>
+                    <td class="py-1 px-2 text-right">3,656.1</td>
+                    <td class="py-1 px-2 text-right font-bold text-emerald-800">6,794.2</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2">15</td>
+                    <td class="py-1 px-2">2026-11-03 16:40</td>
+                    <td class="py-1 px-2">1e7be69e4d12</td>
+                    <td class="py-1 px-2 text-right">2,280.8</td>
+                    <td class="py-1 px-2 text-right">3,148.6</td>
+                    <td class="py-1 px-2 text-right">2.0</td>
+                    <td class="py-1 px-2 text-right">237.9</td>
+                    <td class="py-1 px-2 text-right">4,525.4</td>
+                    <td class="py-1 px-2 text-right font-bold text-slate-900">10,344.7</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2">16</td>
+                    <td class="py-1 px-2">2026-11-10 04:58</td>
+                    <td class="py-1 px-2">29b10c28a401</td>
+                    <td class="py-1 px-2 text-right">4,213.9</td>
+                    <td class="py-1 px-2 text-right">5,391.7</td>
+                    <td class="py-1 px-2 text-right">2.6</td>
+                    <td class="py-1 px-2 text-right">399.0</td>
+                    <td class="py-1 px-2 text-right">5,744.4</td>
+                    <td class="py-1 px-2 text-right font-bold text-slate-900">15,936.5</td>
+                  </tr>
+                  <tr class="bg-emerald-50/70">
+                    <td class="py-1 px-2 font-bold">17</td>
+                    <td class="py-1 px-2">2026-11-10 04:59</td>
+                    <td class="py-1 px-2 font-bold text-emerald-800">20e82a92 (Resume)</td>
+                    <td class="py-1 px-2 text-right">— (Resume)</td>
+                    <td class="py-1 px-2 text-right">— (Resume)</td>
+                    <td class="py-1 px-2 text-right">192.1</td>
+                    <td class="py-1 px-2 text-right">353.5</td>
+                    <td class="py-1 px-2 text-right">8,428.2</td>
+                    <td class="py-1 px-2 text-right font-bold text-emerald-800">9,098.6</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2">18</td>
+                    <td class="py-1 px-2">2026-11-10 05:01</td>
+                    <td class="py-1 px-2">bf7bfaa49c20</td>
+                    <td class="py-1 px-2 text-right">1,592.4</td>
+                    <td class="py-1 px-2 text-right">3,223.8</td>
+                    <td class="py-1 px-2 text-right">1.9</td>
+                    <td class="py-1 px-2 text-right">349.4</td>
+                    <td class="py-1 px-2 text-right">4,783.6</td>
+                    <td class="py-1 px-2 text-right font-bold text-slate-900">10,102.2</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- ============================================================= -->
+          <!-- TABLA 4.2: MUESTRA AUDITADA DE PREGUNTAS REALES (USER_MESSAGE)-->
+          <!-- ============================================================= -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">
+              Tabla 4.2 — Muestra Auditada de Preguntas Originales del Usuario (<code class="font-mono text-[11px] bg-slate-100 px-1 rounded normal-case">input_type: user_message</code>) con Llamadas LLM Activas en el VPS
+            </h4>
+            <div class="border border-slate-300 rounded-md overflow-hidden">
+              <table class="table table-xs w-full">
+                <thead class="bg-slate-100 text-slate-800 border-b border-slate-300">
+                  <tr>
+                    <th class="py-1.5 px-2">ID</th>
+                    <th class="py-1.5 px-2">Timestamp UTC</th>
+                    <th class="py-1.5 px-2">Huella Turno / Conv</th>
+                    <th class="py-1.5 px-2">Ruta Ejecutada en LangGraph</th>
+                    <th class="py-1.5 px-2 text-right">Nodos</th>
+                    <th class="py-1.5 px-2 text-right">Tokens (In / Caché / Out)</th>
+                    <th class="py-1.5 px-2">Resultado Auditado</th>
+                    <th class="py-1.5 px-2 text-right">Duración</th>
+                  </tr>
+                </thead>
+                <tbody class="text-[11px] text-slate-700 divide-y divide-slate-200">
+                  <tr>
+                    <td class="py-1 px-2 font-mono font-bold">#20</td>
+                    <td class="py-1 px-2 font-mono">2026-10-21 08:47:23</td>
+                    <td class="py-1 px-2 font-mono">b506f53b / 77611f0e</td>
+                    <td class="py-1 px-2">Consulta SQL Candidata (Shadow Gate)</td>
+                    <td class="py-1 px-2 text-right font-mono">14</td>
+                    <td class="py-1 px-2 text-right font-mono">37,110 / 0 / 1,225</td>
+                    <td class="py-1 px-2 font-semibold text-emerald-700">SQL Candidato Generado (OK)</td>
+                    <td class="py-1 px-2 text-right font-mono font-semibold">18,645.1 ms</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2 font-mono font-bold">#23</td>
+                    <td class="py-1 px-2 font-mono">2026-10-23 21:37:09</td>
+                    <td class="py-1 px-2 font-mono">884ee85a / 754fbafb</td>
+                    <td class="py-1 px-2">Solicitud Ambigua → Clarificación</td>
+                    <td class="py-1 px-2 text-right font-mono">8</td>
+                    <td class="py-1 px-2 text-right font-mono">15,808 / 4,928 / 413</td>
+                    <td class="py-1 px-2 font-semibold text-primary">Solicitó Aclaración al Usuario</td>
+                    <td class="py-1 px-2 text-right font-mono font-semibold">9,252.6 ms</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2 font-mono font-bold">#24</td>
+                    <td class="py-1 px-2 font-mono">2026-10-23 21:38:57</td>
+                    <td class="py-1 px-2 font-mono">7692ccd6 / 42993658</td>
+                    <td class="py-1 px-2">Consulta SQL Candidata (Shadow Gate)</td>
+                    <td class="py-1 px-2 text-right font-mono">14</td>
+                    <td class="py-1 px-2 text-right font-mono">32,648 / 4,928 / 1,773</td>
+                    <td class="py-1 px-2 font-semibold text-emerald-700">SQL Candidato Generado (OK)</td>
+                    <td class="py-1 px-2 text-right font-mono font-semibold">16,306.1 ms</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2 font-mono font-bold">#27</td>
+                    <td class="py-1 px-2 font-mono">2026-10-23 21:48:02</td>
+                    <td class="py-1 px-2 font-mono">1085c6fa / ee6f8174</td>
+                    <td class="py-1 px-2">Analítica Delegada (Forecast / Serie)</td>
+                    <td class="py-1 px-2 text-right font-mono">14</td>
+                    <td class="py-1 px-2 text-right font-mono">36,448 / 1,493 / 1,297</td>
+                    <td class="py-1 px-2 font-semibold text-primary">Solicitó Aclaración al Usuario</td>
+                    <td class="py-1 px-2 text-right font-mono font-semibold">14,656.1 ms</td>
+                  </tr>
+                  <tr class="bg-emerald-50/50">
+                    <td class="py-1 px-2 font-mono font-bold">#31</td>
+                    <td class="py-1 px-2 font-mono">2026-10-24 05:09:34</td>
+                    <td class="py-1 px-2 font-mono">69ff02b6 / 8c4114eb</td>
+                    <td class="py-1 px-2">Consulta SQL Candidata (Shadow Gate)</td>
+                    <td class="py-1 px-2 text-right font-mono">14</td>
+                    <td class="py-1 px-2 text-right font-mono font-semibold">35,516 / 21,206 / 1,043</td>
+                    <td class="py-1 px-2 font-semibold text-emerald-700">SQL Candidato (59.7 % Caché)</td>
+                    <td class="py-1 px-2 text-right font-mono font-bold text-emerald-800">8,961.0 ms</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2 font-mono font-bold">#36</td>
+                    <td class="py-1 px-2 font-mono">2026-10-30 03:15:49</td>
+                    <td class="py-1 px-2 font-mono">37f34e9e / f1ecdd02</td>
+                    <td class="py-1 px-2">Consulta SQL Candidata (Shadow Gate)</td>
+                    <td class="py-1 px-2 text-right font-mono">14</td>
+                    <td class="py-1 px-2 text-right font-mono">32,638 / 10,331 / 1,227</td>
+                    <td class="py-1 px-2 font-semibold text-emerald-700">SQL Candidato Generado (OK)</td>
+                    <td class="py-1 px-2 text-right font-mono font-semibold">13,748.2 ms</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2 font-mono font-bold">#37</td>
+                    <td class="py-1 px-2 font-mono">2026-10-30 03:19:11</td>
+                    <td class="py-1 px-2 font-mono">7e437267 / f1ecdd02</td>
+                    <td class="py-1 px-2">Consulta SQL Candidata (Shadow Gate)</td>
+                    <td class="py-1 px-2 text-right font-mono">14</td>
+                    <td class="py-1 px-2 text-right font-mono">33,239 / 5,403 / 929</td>
+                    <td class="py-1 px-2 font-semibold text-emerald-700">SQL Candidato Generado (OK)</td>
+                    <td class="py-1 px-2 text-right font-mono font-semibold">11,193.7 ms</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2 font-mono font-bold">#41</td>
+                    <td class="py-1 px-2 font-mono">2026-10-30 03:31:14</td>
+                    <td class="py-1 px-2 font-mono">7f0f885f / b7494f9d</td>
+                    <td class="py-1 px-2">Consulta SQL Candidata (Shadow Gate)</td>
+                    <td class="py-1 px-2 text-right font-mono">14</td>
+                    <td class="py-1 px-2 text-right font-mono">43,542 / 10,331 / 949</td>
+                    <td class="py-1 px-2 font-semibold text-emerald-700">SQL Candidato Generado (OK)</td>
+                    <td class="py-1 px-2 text-right font-mono font-semibold">11,089.4 ms</td>
+                  </tr>
+                  <tr class="bg-emerald-50/50">
+                    <td class="py-1 px-2 font-mono font-bold">#43</td>
+                    <td class="py-1 px-2 font-mono">2026-10-31 02:34:19</td>
+                    <td class="py-1 px-2 font-mono">32a4cf2f / 81662205</td>
+                    <td class="py-1 px-2">Consulta SQL Candidata (Shadow Gate)</td>
+                    <td class="py-1 px-2 text-right font-mono">14</td>
+                    <td class="py-1 px-2 text-right font-mono">33,542 / 5,403 / 912</td>
+                    <td class="py-1 px-2 font-semibold text-emerald-700">SQL Candidato Generado (OK)</td>
+                    <td class="py-1 px-2 text-right font-mono font-bold text-emerald-800">8,861.2 ms</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2 font-mono font-bold">#53</td>
+                    <td class="py-1 px-2 font-mono">2026-11-03 16:40:12</td>
+                    <td class="py-1 px-2 font-mono">1e7be69e / 90a41c28</td>
+                    <td class="py-1 px-2">Consulta SQL Candidata (Shadow Gate)</td>
+                    <td class="py-1 px-2 text-right font-mono">14</td>
+                    <td class="py-1 px-2 text-right font-mono">33,238 / 4,928 / 1,018</td>
+                    <td class="py-1 px-2 font-semibold text-emerald-700">SQL Candidato Generado (OK)</td>
+                    <td class="py-1 px-2 text-right font-mono font-semibold">10,344.7 ms</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1 px-2 font-mono font-bold">#58</td>
+                    <td class="py-1 px-2 font-mono">2026-11-10 05:01:08</td>
+                    <td class="py-1 px-2 font-mono">bf7bfaa4 / 64e9102a</td>
+                    <td class="py-1 px-2">Consulta SQL Candidata (Shadow Gate)</td>
+                    <td class="py-1 px-2 text-right font-mono">14</td>
+                    <td class="py-1 px-2 text-right font-mono">33,179 / 10,331 / 984</td>
+                    <td class="py-1 px-2 font-semibold text-emerald-700">SQL Candidato Generado (OK)</td>
+                    <td class="py-1 px-2 text-right font-mono font-semibold">10,102.2 ms</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- SECCIÓN 5: DESPLIEGUE TÉCNICO EN KUBERNETES (K3S) Y BACKEND     -->
+        <!-- =============================================================== -->
+        <section
+          id="despliegue-kubernetes"
+          class="page-break bg-white text-[#0f172a] shadow-md border border-slate-200/80 rounded-xs px-8 py-10 sm:px-12 sm:py-12 space-y-6 print:shadow-none print:border-0 print:p-0"
+        >
+          <!-- Encabezado de Sección -->
+          <div class="border-b-2 border-slate-800 pb-3 flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <span class="badge badge-primary badge-sm font-semibold uppercase tracking-wider mb-1">
+                Sección 5 · Despliegue Técnico en Kubernetes (25 %) y Persistencia Cloud
+              </span>
+              <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+                5. Despliegue Técnico en Kubernetes (<code class="font-mono text-lg">K3s</code>) y Backend en la Nube
+              </h2>
+            </div>
+            <span class="text-xs font-mono text-slate-500">
+              Verificación en Producción: 12 de noviembre de 2026 · K3s v1.37.2+k3s1
+            </span>
+          </div>
+
+          <!-- Resumen Ejecutivo de la Migración y Cumplimiento del Backend Cloud -->
+          <p class="text-sm leading-relaxed text-slate-700 text-justify">
+            En cumplimiento del requerimiento de evaluación de Seminario (<strong>25 % de despliegue técnico en Kubernetes</strong>
+            y condición obligatoria de <strong>backend en la nube con usuarios almacenados en base de datos</strong>),
+            el día <strong>12 de noviembre de 2026</strong> se ejecutó y certificó en producción la migración del
+            backend autorizativo <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">ApiHub (.NET 8)</code>
+            hacia un clúster real de <strong>Kubernetes (<code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">K3s v1.37.2+k3s1</code>)</strong>
+            sobre el servidor cloud <strong>VPS Ubuntu 24.04</strong>. El <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">Deployment apihub</code>,
+            alojado en el namespace <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">apihub</code> con la
+            imagen inmutable <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">apihub:mvp-001</code>
+            (<code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">sha256:88ad1b2318cf...</code>), se encuentra
+            en estado <strong><code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">1/1 Ready</code> (<code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">Running</code>)</strong>
+            sirviendo el tráfico real de <code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">https://agente.mundoalonzo.com</code>,
+            mientras que la totalidad de usuarios, credenciales 2FA, roles RBAC y sesiones persisten en los motores
+            <strong>SQL Server</strong> y <strong>PostgreSQL</strong> en la nube.
+          </p>
+
+          <!-- Indicadores Clave del Despliegue Kubernetes (4-Column Stats sin Scroll) -->
+          <div class="stats grid grid-cols-2 sm:grid-cols-4 w-full bg-slate-50 border border-slate-300 rounded-md shadow-none overflow-visible">
+            <div class="stat py-3 px-3.5 border-b sm:border-b-0 sm:border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Clúster Kubernetes Activo
+              </div>
+              <div class="stat-value text-base sm:text-lg text-primary font-extrabold my-0.5">
+                K3s v1.37.2
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                Ubuntu 24.04 VPS · Secrets Encryption activo
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5 border-b sm:border-b-0 sm:border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Estado del Deployment
+              </div>
+              <div class="stat-value text-base sm:text-lg text-emerald-700 font-extrabold my-0.5">
+                1/1 Ready
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                ns: apihub · Pod Running · 0 reinicios
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5 border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Seguridad del Contenedor
+              </div>
+              <div class="stat-value text-base sm:text-lg text-slate-900 font-extrabold my-0.5">
+                UID 1654
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                Non-Root · drop: [ALL] · Multi-stage .NET 8
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Usuarios y Persistencia Cloud
+              </div>
+              <div class="stat-value text-base sm:text-lg text-slate-900 font-extrabold my-0.5">
+                SQL + PG
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                100 % usuarios en BD Cloud (HTTP 200 Healthy)
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloques de Ingeniería: Topología de Red Híbrida + Corte e Incidencia de Firewall Resuelta -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Bloque 5.1: Arquitectura del Clúster K3s, Imagen y Secretos -->
+            <div class="card bg-white border border-slate-300 rounded-md shadow-none">
+              <div class="card-body p-5 space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <span class="badge badge-outline badge-sm font-mono text-[11px]">
+                    K3s Server · containerd · Secret
+                  </span>
+                  <span class="text-xs font-semibold text-slate-600">Plano de Control y Red</span>
+                </div>
+                <h3 class="card-title text-base font-bold text-slate-900">
+                  5.1 Instalación Endurecida e Importación de Imagen
+                </h3>
+                <p class="text-xs leading-relaxed text-slate-700 text-justify">
+                  El clúster se configuró preservando la entrada HTTPS productiva y aislando el plano de
+                  control sobre la interfaz privada de administración:
+                </p>
+                <ul class="list-disc pl-4 space-y-1.5 text-xs text-slate-700">
+                  <li>
+                    <strong>Plano de control vinculado a VPN (<code class="font-mono">10.8.0.1:6443</code>):</strong>
+                    Se instaló <code class="font-mono">v1.37.2+k3s1</code> con <code class="font-mono">--disable=traefik --disable=servicelb</code>
+                    para mantener a <strong>Nginx</strong> como proxy inverso TLS en los puertos 80/443, y se activó
+                    <code class="font-mono">--secrets-encryption</code> para cifrar en reposo los secretos de Kubernetes.
+                  </li>
+                  <li>
+                    <strong>Imagen inmutable y usuario no privilegiado:</strong>
+                    Se verificó el digest del contenedor original (<code class="font-mono">apihub:mvp-001</code>,
+                    <code class="font-mono">sha256:88ad1b2318cfdcef...</code>) y se importó directamente al
+                    almacén de <code class="font-mono">containerd</code> (<code class="font-mono">k3s ctr images import</code>)
+                    con política <code class="font-mono">imagePullPolicy: Never</code>. La imagen utiliza compilación
+                    <em>multi-stage</em> en .NET 8 (runtime ASP.NET Core sin SDK) y ejecuta como UID/GID <code class="font-mono">1654</code>.
+                  </li>
+                  <li>
+                    <strong>Gestión segura de credenciales (<code class="font-mono">apihub-env</code>):</strong>
+                    Las cadenas de conexión hacia SQL Server y PostgreSQL se inyectaron en el recurso
+                    <code class="font-mono">Secret/apihub-env</code> en el namespace <code class="font-mono">apihub</code>
+                    directamente en memoria vía <code class="font-mono">kubectl create -f -</code>, sin exponer
+                    secretos en archivos YAML dentro del repositorio.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Bloque 5.2: Corte en Producción, Resolución de Firewall y Reversión -->
+            <div class="card bg-white border border-slate-300 rounded-md shadow-none">
+              <div class="card-body p-5 space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <span class="badge badge-outline badge-sm font-mono text-[11px]">
+                    iptables · br-9bb84e1b8b34 · Rollback
+                  </span>
+                  <span class="text-xs font-semibold text-slate-600">Operación y Resiliencia</span>
+                </div>
+                <h3 class="card-title text-base font-bold text-slate-900">
+                  5.2 Ejecución del Corte y Resolución de Red Privada
+                </h3>
+                <p class="text-xs leading-relaxed text-slate-700 text-justify">
+                  La migración se ejecutó con una estrategia de corte sin pérdida de estado y con plan de
+                  reversión validado empíricamente:
+                </p>
+                <ul class="list-disc pl-4 space-y-1.5 text-xs text-slate-700">
+                  <li>
+                    <strong>Diagnóstico y corrección de firewall en el primer corte:</strong>
+                    Durante el primer intento de corte, <code class="font-mono">ApiHub</code> respondió ante Nginx
+                    (<code class="font-mono">127.0.0.1:8081</code>), pero <code class="font-mono">rag-api</code> agotó
+                    el tiempo de espera hacia <code class="font-mono">172.18.0.1:8081</code>. Se ejecutó la reversión
+                    inmediata a Docker y se identificó que la política <code class="font-mono">INPUT DROP</code> del
+                    host bloqueaba el tráfico entrante desde el puente Docker (<code class="font-mono">br-9bb84e1b8b34</code>).
+                  </li>
+                  <li>
+                    <strong>Regla persistente en <code class="font-mono">iptables</code>:</strong>
+                    Se autorizó exclusivamente el segmento <code class="font-mono">172.18.0.0/16 → 172.18.0.1:8081</code>
+                    en la interfaz del puente Docker (validada con <code class="font-mono">iptables-restore --test</code>
+                    y persistida en <code class="font-mono">/etc/iptables/rules.v4</code>) sin abrir el puerto 8081
+                    en la interfaz pública.
+                  </li>
+                  <li>
+                    <strong>Persistencia de claves y bitácoras:</strong>
+                    El pod monta los volúmenes <code class="font-mono">/app/data-protection</code> y
+                    <code class="font-mono">/app/Logs</code> mediante <code class="font-mono">hostPath</code>,
+                    conservando las llaves criptográficas de sesión de los usuarios activos.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabla 5.1: Topología de Conexiones entre Nginx, K3s y Motores de Base de Datos -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">
+              Tabla 5.1 — Matriz de Direccionamiento e Integración entre el Clúster K3s y los Servicios en el VPS
+            </h4>
+            <div class="border border-slate-300 rounded-md overflow-hidden">
+              <table class="table table-xs w-full">
+                <thead class="bg-slate-100 text-slate-800 border-b border-slate-300">
+                  <tr>
+                    <th class="py-1.5 px-3">Flujo de Conexión</th>
+                    <th class="py-1.5 px-3">Dirección / Endpoint Utilizado</th>
+                    <th class="py-1.5 px-3">Mecanismo de Resolución y Seguridad</th>
+                  </tr>
+                </thead>
+                <tbody class="text-xs text-slate-700 divide-y divide-slate-200">
+                  <tr>
+                    <td class="py-1.5 px-3 font-semibold">Usuario Final → Proxy Inverso Nginx</td>
+                    <td class="py-1.5 px-3 font-mono text-[11px] font-bold text-primary">https://agente.mundoalonzo.com</td>
+                    <td class="py-1.5 px-3">Terminación TLS/HTTPS pública en puertos 80/443 administrada por Nginx.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1.5 px-3 font-semibold">Nginx → ApiHub en Kubernetes (K3s)</td>
+                    <td class="py-1.5 px-3 font-mono text-[11px]">http://127.0.0.1:8081</td>
+                    <td class="py-1.5 px-3">Loopback del host mediante <code class="font-mono text-[11px]">hostNetwork: true</code> en el Pod y sonda TCP de disponibilidad.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1.5 px-3 font-semibold">ApiHub (K3s) → Microservicio RAG (Docker)</td>
+                    <td class="py-1.5 px-3 font-mono text-[11px]">http://127.0.0.1:8000</td>
+                    <td class="py-1.5 px-3">Variable <code class="font-mono text-[11px]">PythonAssistant__BaseUrl</code> en el Secret <code class="font-mono text-[11px]">apihub-env</code>.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1.5 px-3 font-semibold">Microservicio RAG (Docker) → ApiHub (K3s)</td>
+                    <td class="py-1.5 px-3 font-mono text-[11px]">http://172.18.0.1:8081</td>
+                    <td class="py-1.5 px-3">Puente <code class="font-mono text-[11px]">br-9bb84e1b8b34</code> asegurado con regla explícita en <code class="font-mono text-[11px]">iptables</code>.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1.5 px-3 font-semibold">ApiHub (K3s) → SQL Server &amp; PostgreSQL</td>
+                    <td class="py-1.5 px-3 font-mono text-[11px]">sqlserver (172.18.0.2) · postgres (172.18.0.3)</td>
+                    <td class="py-1.5 px-3">Inyección de <code class="font-mono text-[11px]">hostAliases</code> en el Pod hacia la red de datos donde residen los usuarios y artefactos.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Manifiesto YAML Aplicado en Producción (apihub-deployment.yaml) -->
+          <div class="space-y-2">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">
+                Manifiesto YAML de Producción Aplicado en K3s (<code class="font-mono text-[11px] bg-slate-100 px-1.5 py-0.5 rounded normal-case">/opt/apihub-k3s/production/deployment.json</code>)
+              </h4>
+              <span class="text-[11px] font-mono text-slate-600">
+                strategy: Recreate · readinessProbe TCP :8081 · non-root 1654
+              </span>
+            </div>
+            <div class="mockup-code bg-[#f8fafc] text-[#0f172a] border border-slate-300 shadow-none text-[11px] w-full">
+              <pre data-prefix="1"><code>{`apiVersion: apps/v1`}</code></pre>
+              <pre data-prefix="2"><code>{`kind: Deployment`}</code></pre>
+              <pre data-prefix="3"><code>{`metadata: { name: apihub, namespace: apihub }`}</code></pre>
+              <pre data-prefix="4"><code>{`spec:`}</code></pre>
+              <pre data-prefix="5"><code>{`  replicas: 1`}</code></pre>
+              <pre data-prefix="6"><code>{`  strategy: { type: Recreate }`}</code></pre>
+              <pre data-prefix="7"><code>{`  selector: { matchLabels: { app: apihub } }`}</code></pre>
+              <pre data-prefix="8"><code>{`  template:`}</code></pre>
+              <pre data-prefix="9"><code>{`    metadata: { labels: { app: apihub } }`}</code></pre>
+              <pre data-prefix="10"><code>{`    spec:`}</code></pre>
+              <pre data-prefix="11"><code>{`      hostNetwork: true`}</code></pre>
+              <pre data-prefix="12"><code>{`      dnsPolicy: ClusterFirstWithHostNet`}</code></pre>
+              <pre data-prefix="13"><code>{`      automountServiceAccountToken: false`}</code></pre>
+              <pre data-prefix="14"><code>{`      hostAliases:`}</code></pre>
+              <pre data-prefix="15"><code>{`        - { ip: "172.18.0.2", hostnames: ["sqlserver"] }`}</code></pre>
+              <pre data-prefix="16"><code>{`        - { ip: "172.18.0.3", hostnames: ["postgres"] }`}</code></pre>
+              <pre data-prefix="17"><code>{`      containers:`}</code></pre>
+              <pre data-prefix="18"><code>{`        - name: apihub`}</code></pre>
+              <pre data-prefix="19"><code>{`          image: apihub:mvp-001`}</code></pre>
+              <pre data-prefix="20"><code>{`          imagePullPolicy: Never`}</code></pre>
+              <pre data-prefix="21"><code>{`          envFrom: [{ secretRef: { name: apihub-env } }]`}</code></pre>
+              <pre data-prefix="22"><code>{`          securityContext:`}</code></pre>
+              <pre data-prefix="23"><code>{`            runAsUser: 1654`}</code></pre>
+              <pre data-prefix="24"><code>{`            runAsGroup: 1654`}</code></pre>
+              <pre data-prefix="25"><code>{`            runAsNonRoot: true`}</code></pre>
+              <pre data-prefix="26"><code>{`            allowPrivilegeEscalation: false`}</code></pre>
+              <pre data-prefix="27"><code>{`            capabilities: { drop: ["ALL"] }`}</code></pre>
+              <pre data-prefix="28"><code>{`          resources:`}</code></pre>
+              <pre data-prefix="29"><code>{`            requests: { cpu: "100m", memory: "256Mi" }`}</code></pre>
+              <pre data-prefix="30"><code>{`            limits:   { cpu: "1",    memory: "1Gi" }`}</code></pre>
+              <pre data-prefix="31"><code>{`          readinessProbe:`}</code></pre>
+              <pre data-prefix="32"><code>{`            tcpSocket: { host: "127.0.0.1", port: 8081 }`}</code></pre>
+              <pre data-prefix="33"><code>{`            periodSeconds: 3`}</code></pre>
+            </div>
+          </div>
+
+          <!-- Tabla 5.2: Resultados de las Pruebas de Verificación en Producción (12 de Noviembre de 2026) -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">
+              Tabla 5.2 — Certificación de Pruebas Funcionales y de Salud del Despliegue Kubernetes (12/11/2026)
+            </h4>
+            <div class="border border-slate-300 rounded-md overflow-hidden">
+              <table class="table table-xs w-full">
+                <thead class="bg-slate-100 text-slate-800 border-b border-slate-300">
+                  <tr>
+                    <th class="py-1.5 px-3">Verificación Ejecutada</th>
+                    <th class="py-1.5 px-3">Comando / Endpoint de Comprobación</th>
+                    <th class="py-1.5 px-3">Resultado Observado</th>
+                    <th class="py-1.5 px-3 text-right">Estado</th>
+                  </tr>
+                </thead>
+                <tbody class="text-xs text-slate-700 divide-y divide-slate-200">
+                  <tr>
+                    <td class="py-1.5 px-3 font-medium">Estado del Nodo del Clúster K3s</td>
+                    <td class="py-1.5 px-3 font-mono text-[11px]">k3s kubectl get nodes -o wide</td>
+                    <td class="py-1.5 px-3 font-mono text-[11px]">Ready · v1.37.2+k3s1 (Ubuntu 24.04)</td>
+                    <td class="py-1.5 px-3 text-right font-mono font-semibold text-emerald-700">VERIFICADO</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1.5 px-3 font-medium">Disponibilidad del Deployment y Pod</td>
+                    <td class="py-1.5 px-3 font-mono text-[11px]">k3s kubectl -n apihub get deployment,pods</td>
+                    <td class="py-1.5 px-3 font-mono text-[11px]">1/1 Ready · Pod Running · 0 Restarts</td>
+                    <td class="py-1.5 px-3 text-right font-mono font-semibold text-emerald-700">VERIFICADO</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1.5 px-3 font-medium">Desactivación del Contenedor Previo</td>
+                    <td class="py-1.5 px-3 font-mono text-[11px]">docker inspect apihub-apihub-1</td>
+                    <td class="py-1.5 px-3 font-mono text-[11px]">State.Status = exited (conservado para rollback)</td>
+                    <td class="py-1.5 px-3 text-right font-mono font-semibold text-emerald-700">VERIFICADO</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1.5 px-3 font-medium">Entrada HTTPS por Nginx y Salud de RAG</td>
+                    <td class="py-1.5 px-3 font-mono text-[11px]">GET /health/dependencies/python-assistant</td>
+                    <td class="py-1.5 px-3 font-mono text-[11px]">HTTP 200 · Healthy</td>
+                    <td class="py-1.5 px-3 text-right font-mono font-semibold text-emerald-700">VERIFICADO</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1.5 px-3 font-medium">Retorno Interno RAG (Docker) → ApiHub (K3s)</td>
+                    <td class="py-1.5 px-3 font-mono text-[11px]">http://172.18.0.1:8081/health/dependencies/...</td>
+                    <td class="py-1.5 px-3 font-mono text-[11px]">HTTP 200 · Healthy (vía puente br-9bb84e1b8b34)</td>
+                    <td class="py-1.5 px-3 text-right font-mono font-semibold text-emerald-700">VERIFICADO</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1.5 px-3 font-medium">Conectividad a Bases de Datos (PostgreSQL / SQL)</td>
+                    <td class="py-1.5 px-3 font-mono text-[11px]">GET /health/dependencies/assistant-postgres</td>
+                    <td class="py-1.5 px-3 font-mono text-[11px]">HTTP 200 · healthy + TCP SQL Server activo</td>
+                    <td class="py-1.5 px-3 text-right font-mono font-semibold text-emerald-700">VERIFICADO</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- SECCIÓN 6: CONCLUSIONES, PRUEBA DE FUEGO Y RECOMENDACIONES      -->
+        <!-- =============================================================== -->
+        <section
+          id="conclusiones-recomendaciones"
+          class="bg-white text-[#0f172a] shadow-md border border-slate-200/80 rounded-xs px-8 py-10 sm:px-12 sm:py-12 space-y-6 print:shadow-none print:border-0 print:p-0"
+        >
+          <!-- Encabezado de Sección -->
+          <div class="border-b-2 border-slate-800 pb-3 flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <span class="badge badge-primary badge-sm font-semibold uppercase tracking-wider mb-1">
+                Sección 6 · Evaluación de Impacto (25 %), Conclusiones y Recomendaciones
+              </span>
+              <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+                6. Conclusiones, Prueba de Fuego y Recomendaciones
+              </h2>
+            </div>
+            <span class="text-xs font-mono text-slate-500">
+              Ref: Cap. IX Tesis · Validación de Hipótesis · Producción Real
+            </span>
+          </div>
+
+          <!-- 6.1 La Prueba de Fuego: ¿Resolvió el problema y valió la pena? -->
+          <div class="space-y-3">
+            <h3 class="text-base font-bold text-slate-900">
+              6.1 La Prueba de Fuego: ¿Resolvió el Problema Planteado y Valió la Pena?
+            </h3>
+            <p class="text-sm leading-relaxed text-slate-700 text-justify">
+              Antes de la implementación del asistente agéntico, cada solicitud de un reporte analítico o
+              cruce de información no predefinido en el ERP requería entre <strong>1 y 3 días hábiles</strong>
+              de intervención del equipo de desarrollo a un costo promedio de <strong>USD 125.00 por reporte</strong>
+              (<strong>USD 625.00</strong> por un lote de 5 reportes complejos). La evidencia empírica recolectada
+              en producción (<code class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">Datos-estadisticos-VPS-2026-11-09.jsonl</code>)
+              demuestra de forma contundente que <strong>la aplicación resolvió el problema de raíz y que el esfuerzo técnico, arquitectónico y de despliegue valió plenamente la pena</strong>:
+            </p>
+          </div>
+
+          <!-- KPIs de Impacto Antes vs. Después (4-Column Stats sin Scroll) -->
+          <div class="stats grid grid-cols-2 sm:grid-cols-4 w-full bg-slate-50 border border-slate-300 rounded-md shadow-none overflow-visible">
+            <div class="stat py-3 px-3.5 border-b sm:border-b-0 sm:border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Reducción de Costo Operativo
+              </div>
+              <div class="stat-value text-base sm:text-lg text-emerald-700 font-extrabold my-0.5">
+                -95.79 %
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                De USD 625.00 a USD 26.31 (USD 5.26 / reporte)
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5 border-b sm:border-b-0 sm:border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Tiempo de Entrega al Usuario
+              </div>
+              <div class="stat-value text-base sm:text-lg text-primary font-extrabold my-0.5">
+                11.04 s (P50)
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                Antes: 1 a 3 días hábiles de desarrollo TI
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5 border-r border-slate-200">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Costo Total Inferencia OpenAI
+              </div>
+              <div class="stat-value text-base sm:text-lg text-slate-900 font-extrabold my-0.5">
+                USD 1.31
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                123 llamadas (1.33 M tok · 22.53 % caché)
+              </div>
+            </div>
+
+            <div class="stat py-3 px-3.5">
+              <div class="stat-title text-[11px] font-semibold text-slate-600 whitespace-normal leading-tight">
+                Utilidad Percibida (Likert 1–5)
+              </div>
+              <div class="stat-value text-base sm:text-lg text-slate-900 font-extrabold my-0.5">
+                4.75 / 5.00
+              </div>
+              <div class="stat-desc text-[11px] text-slate-600 whitespace-normal leading-tight">
+                Mejora de +1.35 pts frente a línea base (3.40)
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabla Comparativa Antes vs. Después (Evidencia Dura) -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">
+              Tabla 6.1 — Comparativa Cuantitativa y Perceptual: Situación Inicial vs. Solución Agéntica en Producción
+            </h4>
+            <div class="border border-slate-300 rounded-md overflow-hidden">
+              <table class="table table-xs w-full">
+                <thead class="bg-slate-100 text-slate-800 border-b border-slate-300">
+                  <tr>
+                    <th class="py-1.5 px-3">Dimensión Evaluada</th>
+                    <th class="py-1.5 px-3">Situación Inicial (Antes)</th>
+                    <th class="py-1.5 px-3">Con Asistente Agéntico (Después)</th>
+                    <th class="py-1.5 px-3 text-right">Impacto Neto Auditado</th>
+                  </tr>
+                </thead>
+                <tbody class="text-xs text-slate-700 divide-y divide-slate-200">
+                  <tr>
+                    <td class="py-1.5 px-3 font-semibold">Costo de 5 reportes complejos</td>
+                    <td class="py-1.5 px-3 font-mono">USD 625.00 (5 × USD 125.00)</td>
+                    <td class="py-1.5 px-3 font-mono font-bold text-emerald-700">USD 26.31 (VPS USD 25 + IA USD 1.31)</td>
+                    <td class="py-1.5 px-3 text-right font-mono font-bold text-emerald-700">Ahorro USD 598.69 (-95.79 %)</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1.5 px-3 font-semibold">Tiempo de respuesta operativa</td>
+                    <td class="py-1.5 px-3 font-mono">24 a 72 horas (cola de tickets TI)</td>
+                    <td class="py-1.5 px-3 font-mono">11.14 s media (4.79 s en Resume)</td>
+                    <td class="py-1.5 px-3 text-right font-mono font-semibold text-primary">Disponibilidad inmediata 24/7</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1.5 px-3 font-semibold">Claridad de la información (Likert 1–5)</td>
+                    <td class="py-1.5 px-3 font-mono">3.25 ± 0.82</td>
+                    <td class="py-1.5 px-3 font-mono font-semibold">4.68 ± 0.47</td>
+                    <td class="py-1.5 px-3 text-right font-mono font-semibold text-emerald-700">+1.43 puntos (+44.0 %)</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1.5 px-3 font-semibold">Pertinencia para el rol (Likert 1–5)</td>
+                    <td class="py-1.5 px-3 font-mono">3.10 ± 0.74</td>
+                    <td class="py-1.5 px-3 font-mono font-semibold">4.55 ± 0.52</td>
+                    <td class="py-1.5 px-3 text-right font-mono font-semibold text-emerald-700">+1.45 puntos (+46.8 %)</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1.5 px-3 font-semibold">Utilidad en toma de decisiones (Likert 1–5)</td>
+                    <td class="py-1.5 px-3 font-mono">3.40 ± 0.89</td>
+                    <td class="py-1.5 px-3 font-mono font-semibold">4.75 ± 0.44</td>
+                    <td class="py-1.5 px-3 text-right font-mono font-semibold text-emerald-700">+1.35 puntos (+39.7 %)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Tabla 6.2: Análisis de Sensibilidad Económica (Tabla 26 de la Tesis) -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">
+              Tabla 6.2 — Análisis de Sensibilidad Económica frente al Umbral de la Hipótesis H₁ (≥ 20 % de Reducción)
+            </h4>
+            <div class="border border-slate-300 rounded-md overflow-hidden">
+              <table class="table table-xs w-full">
+                <thead class="bg-slate-100 text-slate-800 border-b border-slate-300">
+                  <tr>
+                    <th class="py-1.5 px-3">Escenario Evaluado</th>
+                    <th class="py-1.5 px-3">Costo Adicional Imputado</th>
+                    <th class="py-1.5 px-3">Costo Asistido Total (5 Reportes)</th>
+                    <th class="py-1.5 px-3">Reducción vs. Tradicional (USD 625.00)</th>
+                    <th class="py-1.5 px-3 text-right">Cumplimiento H₁ (≥ 20 %)</th>
+                  </tr>
+                </thead>
+                <tbody class="text-xs text-slate-700 divide-y divide-slate-200">
+                  <tr class="bg-emerald-50/40">
+                    <td class="py-1.5 px-3 font-semibold text-slate-900">Operación Real Medida en VPS</td>
+                    <td class="py-1.5 px-3 font-mono">USD 0.00 (solo VPS + OpenAI)</td>
+                    <td class="py-1.5 px-3 font-mono font-bold text-slate-900">USD 26.31 (USD 5.26 / reporte)</td>
+                    <td class="py-1.5 px-3 font-mono font-bold text-emerald-700">95.79 % (Ahorro: USD 598.69)</td>
+                    <td class="py-1.5 px-3 text-right font-mono font-bold text-emerald-700">CUMPLE (+75.79 pts)</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1.5 px-3 font-medium">Sobrecarga Operativa Moderada</td>
+                    <td class="py-1.5 px-3 font-mono">+ USD 25.00</td>
+                    <td class="py-1.5 px-3 font-mono">USD 51.31 (USD 10.26 / reporte)</td>
+                    <td class="py-1.5 px-3 font-mono font-semibold text-emerald-700">91.79 % (Ahorro: USD 573.69)</td>
+                    <td class="py-1.5 px-3 text-right font-mono font-semibold text-emerald-700">CUMPLE (+71.79 pts)</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1.5 px-3 font-medium">Amortización de Soporte / Mantenimiento</td>
+                    <td class="py-1.5 px-3 font-mono">+ USD 100.00</td>
+                    <td class="py-1.5 px-3 font-mono">USD 126.31 (USD 25.26 / reporte)</td>
+                    <td class="py-1.5 px-3 font-mono font-semibold text-emerald-700">79.79 % (Ahorro: USD 498.69)</td>
+                    <td class="py-1.5 px-3 text-right font-mono font-semibold text-emerald-700">CUMPLE (+59.79 pts)</td>
+                  </tr>
+                  <tr>
+                    <td class="py-1.5 px-3 font-medium">Escenario Conservador de Imputación</td>
+                    <td class="py-1.5 px-3 font-mono">+ USD 250.00</td>
+                    <td class="py-1.5 px-3 font-mono">USD 276.31 (USD 55.26 / reporte)</td>
+                    <td class="py-1.5 px-3 font-mono font-semibold text-emerald-700">55.79 % (Ahorro: USD 348.69)</td>
+                    <td class="py-1.5 px-3 text-right font-mono font-semibold text-emerald-700">CUMPLE (+35.79 pts)</td>
+                  </tr>
+                  <tr class="bg-slate-50">
+                    <td class="py-1.5 px-3 font-medium">Punto de Equilibrio de la Hipótesis</td>
+                    <td class="py-1.5 px-3 font-mono">+ USD 473.69 (umbral máximo)</td>
+                    <td class="py-1.5 px-3 font-mono">USD 500.00 (USD 100.00 / reporte)</td>
+                    <td class="py-1.5 px-3 font-mono font-semibold text-slate-800">20.00 % (Ahorro: USD 125.00)</td>
+                    <td class="py-1.5 px-3 text-right font-mono font-semibold text-slate-800">LÍMITE EXACTO H₁</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 6.2 Conclusiones Generales y Reflexión Profesional + 6.3 Recomendaciones -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Bloque 6.2: Conclusiones Técnicas y Reflexión Profesional -->
+            <div class="card bg-white border border-slate-300 rounded-md shadow-none">
+              <div class="card-body p-5 space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <span class="badge badge-outline badge-sm font-mono text-[11px]">
+                    Síntesis Técnica y Profesional
+                  </span>
+                  <span class="text-xs font-semibold text-slate-600">Valor en Producción Real</span>
+                </div>
+                <h3 class="card-title text-base font-bold text-slate-900">
+                  6.2 Conclusiones Generales del Proyecto
+                </h3>
+                <ul class="list-disc pl-4 space-y-2 text-xs text-slate-700 text-justify">
+                  <li>
+                    <strong>Validación de viabilidad arquitectónica:</strong>
+                    El proyecto exigió profundizar en tecnologías emergentes, actualizar procesos de
+                    ingeniería y validar empíricamente qué patrones de arquitectura agéntica son realmente
+                    sostenibles en un sistema transaccional. La separación entre el plano cognitivo
+                    (<code class="font-mono">rag-api</code> con LangGraph, Milvus y <code class="font-mono">SchemaClosureEngine</code>)
+                    y el plano autorizativo (<code class="font-mono">ApiHub</code> en .NET 8 sobre Kubernetes
+                    <code class="font-mono">K3s</code> con 2FA y <code class="font-mono">ScriptDom AST</code>)
+                    probó ser la clave para lograr <strong>0 % de alucinación numérica y 0 ejecuciones SQL inseguras</strong>.
+                  </li>
+                  <li>
+                    <strong>Eficiencia económica mediante ingeniería de contexto:</strong>
+                    El reordenamiento de prompts (<code class="font-mono">6.27+query-agent-1.0</code>) y la
+                    compilación de evidencia en <code class="font-mono">20.35 ms</code> permitieron alcanzar un
+                    <strong>61.6 % de acierto de caché en clasificación</strong> y bloques constantes de
+                    <strong>5,403 tokens cacheados en <code class="font-mono">gpt-5.6-terra</code></strong>,
+                    manteniendo el costo total de inferencia en apenas <strong>USD 1.31</strong> durante todo el
+                    período auditado.
+                  </li>
+                  <li>
+                    <strong>Gratificación profesional e impacto empresarial real:</strong>
+                    Más allá del cumplimiento académico, el proyecto concluye con la profunda satisfacción de
+                    que la plataforma desarrollada <strong>ya se encuentra operando en producción (<code class="font-mono">https://agente.mundoalonzo.com</code>) y es utilizada día a día por una empresa real</strong>.
+                    Esta experiencia consolida un criterio técnico mucho más empírico y orientado para liderar
+                    futuros proyectos de inteligencia artificial aplicada a nivel corporativo.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Bloque 6.3: Recomendaciones Técnicas y de Evolución -->
+            <div class="card bg-white border border-slate-300 rounded-md shadow-none">
+              <div class="card-body p-5 space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <span class="badge badge-outline badge-sm font-mono text-[11px]">
+                    Mejora Continua y Hoja de Ruta
+                  </span>
+                  <span class="text-xs font-semibold text-slate-600">Evolución Post-Auditoría</span>
+                </div>
+                <h3 class="card-title text-base font-bold text-slate-900">
+                  6.3 Recomendaciones Técnicas y Operativas
+                </h3>
+                <ul class="list-disc pl-4 space-y-2 text-xs text-slate-700 text-justify">
+                  <li>
+                    <strong>1. Validador estático pre-despliegue (CI/CD) para artefactos semánticos:</strong>
+                    Con base en el hallazgo de los 10 turnos con fallo controlado (<code class="font-mono">17.2 %</code>)
+                    y 9 errores de stream (<code class="font-mono">15.5 %</code>), se recomienda integrar un
+                    validador estático <em>offline</em> que verifique la alineación entre el catálogo JSON,
+                    las llaves foráneas del <code class="font-mono">SchemaClosureEngine</code> y el esquema real
+                    de SQL Server antes de publicar nuevas versiones en Milvus.
+                  </li>
+                  <li>
+                    <strong>2. Operación y alta disponibilidad en Kubernetes (<code class="font-mono">K3s</code>):</strong>
+                    Automatizar la verificación de las direcciones IP en <code class="font-mono">hostAliases</code>
+                    (<code class="font-mono">sqlserver</code> y <code class="font-mono">postgres</code>) ante
+                    mantenimientos de Docker, programar ejercicios periódicos de <code class="font-mono">rollout restart</code>
+                    en ventanas de mantenimiento y evaluar en una siguiente fase la incorporación de
+                    <code class="font-mono">rag-api</code> como segundo <code class="font-mono">Deployment</code>
+                    nativo dentro del mismo namespace <code class="font-mono">apihub</code>.
+                  </li>
+                  <li>
+                    <strong>3. Expansión progresiva de dominios del ERP bajo supervisión humana:</strong>
+                    Extender el catálogo de plantillas y capacidades hacia los módulos de contabilidad general,
+                    bancos y logística conservando estrictamente la pausa interactiva (<code class="font-mono">needs_clarification</code>)
+                    ante ambigüedad y la confirmación humana obligatoria para cualquier acción sensible (<code class="font-mono">RN-11</code>).
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6.4 Reflexión Personal del Autor al Cierre de Pensum (Palabras Íntegras del Autor) -->
+          <blockquote class="card bg-slate-50 border-l-4 border-l-primary border border-slate-300 rounded-md shadow-none p-5 space-y-2.5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-900">
+                6.4 Reflexión Personal del Autor al Cierre de Pensum
+              </span>
+              <span class="badge badge-primary badge-sm font-mono text-[10px]">
+                Wilson Neftali Mundo Alonzo · UMG
+              </span>
+            </div>
+            <p class="text-xs sm:text-[13px] leading-relaxed text-slate-800 italic text-justify">
+              «Fue un proyecto muy bueno y retador desde mi perspectiva; me hizo ahondar en información,
+              actualizar mis procesos y, sobre todo, validar viabilidades de arquitectura que llevaría a
+              cabo el proyecto. Finalizó con una gran gratificación de lo aprendido y, sobre todo, sabiendo
+              que lo creado ya está en producción y con una empresa real utilizándolo en su día a día, lo
+              que abre puertas para poder abordar nuevos proyectos de este tipo con un conocimiento más
+              empírico y más orientado. Fue un largo recorrido en este proceso que, aparte de consumir
+              tiempo, permitió aprender sobre herramientas actualizadas y llevarlas a un caso de uso real
+              aplicando lo aprendido y colocándolo en práctica. Me agradó desde el sentido de aprendizaje y
+              puedo concluir mi trabajo sabiendo que coloqué mi esfuerzo en un proyecto que me permitirá
+              cerrar pensum… fue largo, pero se aprendió en el camino.»
+            </p>
+          </blockquote>
+
+          <!-- Cierre Institucional del Documento -->
+          <div class="border-t border-slate-300 pt-4 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-600">
+            <span>
+              <strong>Autor:</strong> Wilson Neftali Mundo Alonzo (<code class="font-mono">wmundoa@miumg.edu.gt</code>)
+            </span>
+            <span>
+              <strong>Universidad Mariano Gálvez de Guatemala</strong> · Facultad de Ingeniería en Sistemas · Noviembre 2026
+            </span>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Estilos Globales y Reglas de Impresión Tamaño Carta -->
+    <style is:global>
+      .font-serif {
+        font-family: "Times New Roman", Times, Georgia, Cambria, serif;
+      }
+
+      .page-break {
+        page-break-after: always;
+        break-after: page;
+      }
+
+      /* Formato formal para documento académico (en pantalla e impresión) */
+      .stats {
+        display: grid !important;
+        grid-auto-flow: row !important;
+        overflow: visible !important;
+        width: 100% !important;
+      }
+
+      .stat {
+        overflow: visible !important;
+        min-width: 0 !important;
+      }
+
+      .stat-title,
+      .stat-desc,
+      .stat-value {
+        white-space: normal !important;
+        overflow-wrap: break-word !important;
+      }
+
+      table {
+        width: 100% !important;
+        table-layout: auto !important;
+      }
+
+      table th,
+      table td {
+        white-space: normal !important;
+        overflow-wrap: break-word !important;
+        vertical-align: top !important;
+      }
+
+      .mockup-code {
+        background-color: #f8fafc !important;
+        color: #0f172a !important;
+        border: 1px solid #cbd5e1 !important;
+        box-shadow: none !important;
+        overflow: hidden !important;
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .mockup-code::before {
+        display: none !important;
+      }
+
+      .mockup-code pre {
+        display: flex !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        color: #0f172a !important;
+        background-color: transparent !important;
+        white-space: pre-wrap !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+        overflow: hidden !important;
+        padding-left: 0.75rem !important;
+        padding-right: 1rem !important;
+      }
+
+      .mockup-code pre[data-prefix]::before {
+        color: #64748b !important;
+        flex-shrink: 0 !important;
+        width: 1.5rem !important;
+        margin-right: 0.65rem !important;
+        text-align: right !important;
+      }
+
+      .mockup-code pre > code {
+        flex: 1 1 0% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        color: #0f172a !important;
+        background-color: transparent !important;
+        white-space: pre-wrap !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+      }
+
+      @media print {
+        @page {
+          size: letter;
+          margin: 1.5cm;
+        }
+
+        html,
+        body {
+          background-color: #ffffff !important;
+          color: #0f172a !important;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        .no-print {
+          display: none !important;
+        }
+
+        .card,
+        .stats,
+        table,
+        pre,
+        blockquote,
+        figure {
+          break-inside: avoid !important;
+          page-break-inside: avoid !important;
+        }
+      }
+    </style>
+  </body>
+</html>
